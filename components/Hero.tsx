@@ -56,22 +56,15 @@ export function Hero() {
           </span>
         </motion.h1>
 
-        {/* Title with typing effect style */}
-        <motion.div
+        {/* Title */}
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-8"
+          className="text-xl md:text-2xl lg:text-3xl text-navy-600 dark:text-navy-200 font-light mb-8"
         >
-          <span className="text-xl md:text-2xl lg:text-3xl text-navy-600 dark:text-navy-200 font-light">
-            {personal.title}
-          </span>
-          <motion.span
-            animate={{ opacity: [1, 0] }}
-            transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-            className="inline-block w-0.5 h-6 md:h-8 bg-primary-500 ml-2 align-middle"
-          />
-        </motion.div>
+          {personal.title}
+        </motion.p>
 
         {/* Stats/highlights */}
         <motion.div
