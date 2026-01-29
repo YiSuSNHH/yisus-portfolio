@@ -7,12 +7,16 @@ const crimsonPro = Crimson_Pro({
   subsets: ["latin"],
   variable: "--font-crimson",
   display: "swap",
+  preload: true,
+  fallback: ['Georgia', 'serif'],
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
@@ -50,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "YiSuS Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "YiSuS - Software Engineer Portfolio",
@@ -62,7 +66,7 @@ export const metadata: Metadata = {
     title: "YiSuS | Nguyen Huy Hung - Software Engineer",
     description:
       "Software Engineer specializing in educational technology and financial platforms.",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -75,9 +79,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // Thay bằng mã verification thực tế
-  },
 };
 
 export default function RootLayout({
@@ -87,6 +88,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        {/* Critical resource hints */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://vercel.app" />
+        
+        {/* Preload critical CSS */}
+        <link
+          rel="preload"
+          href="/_next/static/css/app/layout.css"
+          as="style"
+          onLoad="this.onload=null;this.rel='stylesheet'"
+        />
+        
+        {/* Critical inline styles to prevent FOUC */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            body { 
+              font-family: system-ui, -apple-system, sans-serif;
+              background: #FFFEF5;
+              color: #102A43;
+            }
+            .dark body {
+              background: #102A43;
+              color: #F0F4F8;
+            }
+          `
+        }} />
+      </head>
       <body
         className={`${crimsonPro.variable} ${inter.variable} font-sans antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >

@@ -1,12 +1,30 @@
 "use client";
 
-import { Hero, Skills, Experience, Projects, Contact } from "@/components";
+import { Hero } from "@/components";
 import { portfolioData } from "@/data/portfolio";
 import { Mail, ExternalLink, Github, Heart, ChevronUp, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LogoLotus } from "@/components/Logo";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+
+// Lazy load non-critical components
+const Skills = dynamic(() => import("@/components").then(mod => ({ default: mod.Skills })), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
+});
+
+const Projects = dynamic(() => import("@/components").then(mod => ({ default: mod.Projects })), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
+});
+
+const Experience = dynamic(() => import("@/components").then(mod => ({ default: mod.Experience })), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
+});
+
+const Contact = dynamic(() => import("@/components").then(mod => ({ default: mod.Contact })), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
+});
 
 export default function Home() {
   const { personal } = portfolioData;
@@ -244,7 +262,6 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Test commit */}
       {/* Back to Top Button */}
       <AnimatePresence>
         {showBackToTop && (

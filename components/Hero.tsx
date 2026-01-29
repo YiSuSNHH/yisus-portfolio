@@ -7,7 +7,10 @@ import dynamic from "next/dynamic";
 
 const HeroBackground = dynamic(
   () => import("./HeroBackground").then((mod) => mod.HeroBackground),
-  { ssr: false }
+  { 
+    ssr: false,
+    loading: () => null
+  }
 );
 
 export function Hero() {
