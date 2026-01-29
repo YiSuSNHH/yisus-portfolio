@@ -5,7 +5,7 @@ import { Printer, ArrowLeft, Mail, Phone, MapPin, Github, Linkedin, Sparkles } f
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-export default function CVPage() {
+export default function ResumePage() {
   const { personal, about, skills, experience, education } = portfolioData;
 
   const handlePrint = () => {
@@ -15,34 +15,35 @@ export default function CVPage() {
   return (
     <>
       {/* Print Controls - Hidden when printing */}
-      <div className="no-print fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-navy-900/90 backdrop-blur-lg border-b border-gray-200 dark:border-navy-700 py-4 px-6">
+      <div className="no-print fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-navy-900/90 backdrop-blur-lg border-b border-gray-200 dark:border-navy-700 py-3 sm:py-4 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <motion.a
             href="/"
             whileHover={{ x: -5 }}
-            className="flex items-center gap-2 text-navy-600 dark:text-navy-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            className="flex items-center gap-1.5 sm:gap-2 text-navy-600 dark:text-navy-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
           >
-            <ArrowLeft size={20} />
-            <span>Back to Portfolio</span>
+            <ArrowLeft size={18} className="sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Back to Portfolio</span>
           </motion.a>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <ThemeToggle />
             <motion.button
               onClick={handlePrint}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg hover:shadow-xl"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg hover:shadow-xl text-sm sm:text-base"
             >
-              <Printer size={18} />
-              <span>Print / Save PDF</span>
+              <Printer size={16} className="sm:w-[18px] sm:h-[18px]" />
+              <span className="hidden xs:inline">Print / Save PDF</span>
+              <span className="xs:hidden">Print</span>
             </motion.button>
           </div>
         </div>
       </div>
 
-      {/* CV Content */}
+      {/* Resume Content */}
       <main className="min-h-screen bg-gray-50 dark:bg-navy-800 print:bg-white">
-        <div className="max-w-4xl mx-auto px-6 py-8 mt-20 print:mt-0 print:px-0">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 mt-16 sm:mt-20 print:mt-0 print:px-0">
           {/* Header Card */}
           <motion.header
             initial={{ opacity: 0, y: 20 }}

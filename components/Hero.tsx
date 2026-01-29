@@ -174,12 +174,12 @@ export function Hero() {
             />
           </motion.a>
           <motion.a
-            href="/cv"
+            href="/resume"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 border-2 border-primary-500 text-primary-600 dark:text-primary-400 rounded-xl hover:bg-primary-500 hover:text-white transition-all font-medium backdrop-blur-sm bg-white/30 dark:bg-navy-800/30"
           >
-            View CV
+            View Resume
           </motion.a>
         </motion.div>
       </div>

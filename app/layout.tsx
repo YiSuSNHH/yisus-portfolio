@@ -29,13 +29,54 @@ export const metadata: Metadata = {
     "Spring Boot",
     "DDD",
     "Clean Architecture",
+    "Nguyen Huy Hung",
+    "Portfolio",
+    "Vietnam Developer",
   ],
-  authors: [{ name: "Nguyen Huy Hung" }],
+  authors: [{ name: "Nguyen Huy Hung", url: "https://yisus.dev" }],
+  creator: "Nguyen Huy Hung",
+  publisher: "Nguyen Huy Hung",
+  metadataBase: new URL("https://yisus.dev"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "YiSuS | Nguyen Huy Hung - Software Engineer",
     description:
-      "Software Engineer specializing in educational technology and financial platforms.",
+      "Software Engineer specializing in educational technology and financial platforms. Expert in DDD, Clean Architecture, and modern backend development.",
     type: "website",
+    locale: "en_US",
+    url: "https://yisus.dev",
+    siteName: "YiSuS Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "YiSuS - Software Engineer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YiSuS | Nguyen Huy Hung - Software Engineer",
+    description:
+      "Software Engineer specializing in educational technology and financial platforms.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code", // Thay bằng mã verification thực tế
   },
 };
 

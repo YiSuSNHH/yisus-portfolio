@@ -46,14 +46,14 @@ export default function Home() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <motion.a
             href="/"
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-1.5 sm:gap-2"
           >
-            <LogoLotus size={36} />
-            <span className="font-serif text-2xl font-bold gold-shimmer tracking-tight">YiSuS</span>
+            <LogoLotus size={28} className="sm:w-9 sm:h-9" />
+            <span className="font-serif text-lg sm:text-2xl font-bold gold-shimmer tracking-tight hidden xs:block">YiSuS</span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -73,7 +73,7 @@ export default function Home() {
               </motion.a>
             ))}
             <motion.a
-              href="/cv"
+              href="/resume"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
@@ -81,20 +81,20 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               className="px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all text-sm font-medium"
             >
-              View CV
+              View Resume
             </motion.a>
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-2 sm:gap-4 md:hidden">
             <ThemeToggle />
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-navy-600 dark:text-navy-300"
+              className="p-1.5 sm:p-2 text-navy-600 dark:text-navy-300"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
             </motion.button>
           </div>
         </div>
@@ -123,14 +123,14 @@ export default function Home() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href="/cv"
+                  href="/resume"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg text-center font-medium"
                 >
-                  View CV
+                  View Resume
                 </motion.a>
               </div>
             </motion.div>
@@ -185,11 +185,11 @@ export default function Home() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href="/cv"
+                  href="/resume"
                   whileHover={{ x: 5 }}
                   className="text-navy-400 hover:text-primary-400 transition-colors text-sm"
                 >
-                  View CV
+                  View Resume
                 </motion.a>
               </div>
             </div>

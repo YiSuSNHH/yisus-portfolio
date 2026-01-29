@@ -45,16 +45,17 @@ Kỹ sư Phần mềm với hơn 3 năm kinh nghiệm chuyên về **công ngh�
 ## Kinh nghiệm làm việc
 
 ### Kỹ sư Phần mềm — Onschool Edtech Group
-*2022 – Hiện tại*
+*11/2022 – Hiện tại*
 
-**Student Life Cycle** — Java 21, Spring Boot
+**Student Life Cycle** — Java 21, Spring Boot · **Tech Lead**
 - Thiết kế kiến trúc DDD + Hexagonal multi-module Maven với domain layer thuần (entities, value objects, domain services)
 - Thiết kế phân tách infrastructure layer: platform/core, platform/infrastructure, application layer
 - Triển khai JWT authentication với Spring Security và custom PermissionEvaluator cho method-level authorization
 - Cấu hình Flyway migrations và SpringDoc OpenAPI cho API documentation
 
-**SRM System** — Lumen, Swoole
-- Xây dựng backend async hiệu năng cao với Lumen + Swoole
+**SRM System** — Lumen, Swoole · **Tech Lead** *(giai đoạn sau)*
+- Xây dựng hệ thống quản lý quan hệ sinh viên: form đăng ký contact → thu thập thông tin cho kế toán/sales → bàn giao giáo vụ quản lý hồ sơ → điều hành học tập
+- Phát triển backend async hiệu năng cao với Lumen + Swoole
 - Thiết kế kiến trúc Modular Monolith với composer-merge-plugin
 - Tạo platform core layer: Entity base class, Repository pattern, Hydrator, EventDispatcher
 - Triển khai Actions pattern (Use Cases) với DTOs và self-hydration cho entity mapping

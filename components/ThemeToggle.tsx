@@ -14,10 +14,10 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-navy-800 rounded-lg">
-        <div className="p-2"><Sun size={18} className="text-gray-400" /></div>
-        <div className="p-2"><Moon size={18} className="text-gray-400" /></div>
-        <div className="p-2"><Monitor size={18} className="text-gray-400" /></div>
+      <div className="flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 bg-gray-100 dark:bg-navy-800 rounded-lg">
+        <div className="p-1.5 sm:p-2"><Sun size={16} className="text-gray-400 sm:w-[18px] sm:h-[18px]" /></div>
+        <div className="p-1.5 sm:p-2"><Moon size={16} className="text-gray-400 sm:w-[18px] sm:h-[18px]" /></div>
+        <div className="p-1.5 sm:p-2"><Monitor size={16} className="text-gray-400 sm:w-[18px] sm:h-[18px]" /></div>
       </div>
     );
   }
@@ -35,12 +35,12 @@ function ThemeToggleInner() {
   ];
 
   return (
-    <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-navy-800 rounded-lg">
+    <div className="flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 bg-gray-100 dark:bg-navy-800 rounded-lg">
       {themes.map(({ value, icon: Icon, label }) => (
         <motion.button
           key={value}
           onClick={() => setTheme(value)}
-          className={`relative p-2 rounded-md transition-colors ${
+          className={`relative p-1.5 sm:p-2 rounded-md transition-colors ${
             theme === value
               ? "text-primary-600 dark:text-primary-400"
               : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
@@ -56,7 +56,7 @@ function ThemeToggleInner() {
               transition={{ type: "spring", duration: 0.3 }}
             />
           )}
-          <Icon size={18} className="relative z-10" />
+          <Icon size={16} className="relative z-10 sm:w-[18px] sm:h-[18px]" />
         </motion.button>
       ))}
     </div>

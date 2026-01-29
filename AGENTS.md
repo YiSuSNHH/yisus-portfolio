@@ -1,22 +1,22 @@
 # AGENTS.md
 
 ## Project Overview
-Personal portfolio repository containing CV/resume in multiple formats (Markdown, PDF).
+Personal portfolio repository containing resume in multiple formats (Markdown, PDF).
 
 ## Structure
 ```
-cv/
-  en.md       # English CV (clean version for sharing)
-  vi.md       # Vietnamese CV (clean version for sharing)
+resume/
+  en.md       # English Resume (clean version for sharing)
+  vi.md       # Vietnamese Resume (clean version for sharing)
   vi-raw.md   # Vietnamese raw notes (internal use, NOT for sharing)
 ```
 
 ## Conventions
 - `vi-raw.md` is the source of truth for detailed info; sync to `en.md` and `vi.md`
-- Keep clean CVs concise and professional; raw file contains full details
-- Use consistent Markdown formatting across all CV files
-- Emoji icons allowed in clean CVs for visual appeal
-- File links use relative paths within cv/ directory
+- Keep clean resumes concise and professional; raw file contains full details
+- Use consistent Markdown formatting across all resume files
+- Emoji icons allowed in clean resumes for visual appeal
+- File links use relative paths within resume/ directory
 
 ## Content Guidelines
 - Do NOT include projects marked "không nên đưa vào CV" in clean versions
