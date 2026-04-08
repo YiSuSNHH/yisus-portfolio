@@ -45,46 +45,42 @@ Passionate about creating well-structured, maintainable code.
 ## Professional Experience
 
 ### Software Engineer — Onschool Edtech Group
-*2022 – Present*
+*11/2022 – Present*
 
-**Student Life Cycle** — Java 21, Spring Boot
-- Architected DDD + Hexagonal multi-module Maven project with pure domain layer (entities, value objects, domain services)
-- Designed infrastructure layer separation: platform/core, platform/infrastructure, application layer
-- Implemented JWT authentication with Spring Security and custom PermissionEvaluator for method-level authorization
-- Configured Flyway migrations and SpringDoc OpenAPI for API documentation
+**SLC (Student Life Cycle)** — Java 21, Spring Boot, Next.js (React), PostgreSQL · **Tech Lead**
+- Architected a multi-module Maven codebase with a pure domain layer to keep business rules isolated and maintainable
+- Separated platform/core, platform/infrastructure, and application modules to clarify system boundaries
+- Implemented JWT authentication and method-level authorization with Spring Security and a custom PermissionEvaluator
+- Configured Flyway migrations and SpringDoc OpenAPI to keep schema changes and API contracts aligned
+- Standardized bootstrap scripts, config, and PostgreSQL provisioning so local environments could be reproduced from the README
 
-**SRM System** — Lumen, Swoole
-- Built high-performance async backend with Lumen + Swoole
+**SRM System (Student Management)** — Lumen, Laravel, React, Nuxt.js (Vue), PostgreSQL · **Tech Lead** *(later phase)*
+- Started as an individual contributor and later took Tech Lead responsibilities in a subsequent phase
+- Built and maintained backend services with Lumen and Laravel, integrated with React and Nuxt.js clients
 - Designed Modular Monolith architecture with composer-merge-plugin
-- Created platform core layer: Entity base class, Repository pattern, Hydrator, EventDispatcher
-- Implemented Actions pattern (Use Cases) with DTOs and self-hydration for entity mapping
+- Built a shared platform core with base entities, repositories, hydrators, and event dispatching
+- Implemented action-based use cases with DTOs and self-hydration for entity mapping
 - Integrated Firebase push notifications and QR Bank payment APIs
-
-**Student Management System** — Laravel
-- Developed modular architecture for class management, financial processing, and reporting
+- Improved observability with logging and tracing, and optimized data access to prevent N+1 query patterns
 
 **Moodle Integration**
 - Reverse-engineered Moodle autoload mechanism (Frankenstyle naming convention)
 - Developed local plugin with external functions and web service APIs
 
-**Tech Stack:** Java/Spring Boot, Laravel, Lumen, Swoole, Nuxt.js, Next.js, MySQL, PostgreSQL, Firebase, Moodle
+**Tech Stack:** Java/Spring Boot, Laravel, Lumen, React, Nuxt.js, Next.js, MySQL, PostgreSQL, Firebase, Moodle
 
 ---
 
 ### Freelance Software Engineer
-*2021 – Present*
+*2022 – Present*
 
 **Financial Management Platform**
-- Built a complete financial software solution with document processing and order management
-- Integrated complex business workflows for financial operations
+- Built a modular Laravel platform with a PSR-compliant PHP core to keep domain logic reusable
+- Modeled flexible business entities with an **Entity-Attribute-Value (EAV)** schema
+- Designed an **Event-Driven Architecture** with NATS for asynchronous workflows and real-time notifications
+- Implemented lazy loading to improve perceived frontend performance
 
-**Skeleton Platform** (Low-Code Platform)
-- Architected a low-code platform using **Entity-Attribute-Value (EAV)** model
-- Implemented **Domain-Driven Design** patterns with PSR-compliant PHP core
-- Built event-driven architecture with NATS Server as message broker for real-time notifications
-- Implemented lazy loading for optimized image performance
-
-**Tech Stack:** Laravel, Inertia.js, React, MongoDB, PostgreSQL, NATS Server
+**Tech Stack:** Laravel, Inertia.js, React, MongoDB, PostgreSQL, NATS
 
 ---
 

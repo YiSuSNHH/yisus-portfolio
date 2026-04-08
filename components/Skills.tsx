@@ -13,6 +13,7 @@ import {
   Zap,
   Star
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const skillGradients: Record<string, string> = {
   languages: "from-amber-500 to-orange-500",
@@ -24,6 +25,7 @@ const skillGradients: Record<string, string> = {
 
 export function Skills() {
   const { skills } = portfolioData;
+  const t = useTranslations("home.skills");
 
   return (
     <section id="skills" className="py-20 px-6 bg-white dark:bg-navy-900 relative overflow-hidden">
@@ -82,17 +84,17 @@ export function Skills() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 dark:bg-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-sm font-medium">
               <Sparkles size={16} />
-              What I Work With
+              {t("badge")}
             </span>
           </motion.div>
 
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-center">
             <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 dark:from-primary-400 dark:via-primary-300 dark:to-primary-400 bg-clip-text text-transparent">
-              Technical Skills
+              {t("title")}
             </span>
           </h2>
           <p className="text-navy-500 dark:text-navy-400 text-center mb-12 max-w-2xl mx-auto">
-            A comprehensive toolkit built over 3+ years of professional development
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -113,7 +115,7 @@ export function Skills() {
                   <Code2 className="text-white" size={24} />
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white">
-                  Languages
+                  {t("categories.languages")}
                 </h3>
               </div>
 
@@ -132,7 +134,7 @@ export function Skills() {
                       {lang.level === "Primary" && (
                         <span className="inline-flex items-center gap-1 text-xs bg-gradient-to-r from-primary-500 to-primary-600 text-white px-2 py-0.5 rounded-full">
                           <Star size={10} fill="currentColor" />
-                          Primary
+                          {t("primary")}
                         </span>
                       )}
                     </div>
@@ -159,7 +161,7 @@ export function Skills() {
                   <Database className="text-white" size={24} />
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white">
-                  Databases
+                  {t("categories.databases")}
                 </h3>
               </div>
 
@@ -195,7 +197,7 @@ export function Skills() {
                   <Layers className="text-white" size={24} />
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white">
-                  Architecture
+                  {t("categories.architecture")}
                 </h3>
               </div>
 
@@ -231,7 +233,7 @@ export function Skills() {
                   <BookOpen className="text-white" size={24} />
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white">
-                  Principles
+                  {t("categories.principles")}
                 </h3>
               </div>
 
@@ -268,9 +270,9 @@ export function Skills() {
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-semibold text-navy-900 dark:text-white">
-                    Tools & Environment
+                    {t("categories.tools")}
                   </h3>
-                  <p className="text-sm text-navy-500 dark:text-navy-400">Development ecosystem I use daily</p>
+                  <p className="text-sm text-navy-500 dark:text-navy-400">{t("toolsDescription")}</p>
                 </div>
               </div>
 

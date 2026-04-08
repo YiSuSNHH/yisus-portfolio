@@ -1,0 +1,149 @@
+{
+  "common": {
+    "locale": "Tiếng Việt",
+    "loading": "Đang tải...",
+    "aria": {
+      "languageSwitcher": "Chuyển ngôn ngữ",
+      "themeSwitcher": "Bộ chuyển giao diện",
+      "themeLight": "Dùng giao diện sáng",
+      "themeDark": "Dùng giao diện tối",
+      "themeSystem": "Dùng giao diện theo hệ thống",
+      "switchToEnglish": "Chuyển ngôn ngữ sang tiếng Anh",
+      "switchToVietnamese": "Chuyển ngôn ngữ sang tiếng Việt"
+    },
+    "theme": {
+      "light": "Sáng",
+      "dark": "Tối",
+      "system": "Hệ thống"
+    },
+    "actions": {
+      "viewResume": "Xem CV",
+      "printSavePdf": "In / Lưu PDF",
+      "print": "In"
+    }
+  },
+  "home": {
+    "a11y": {
+      "mainNavigation": "Điều hướng chính",
+      "homeLink": "Về trang chủ",
+      "footerHomeLink": "Về trang chủ",
+      "openMobileMenu": "Mở menu",
+      "closeMobileMenu": "Đóng menu",
+      "githubProfile": "Mở trang GitHub",
+      "linkedinProfile": "Mở trang LinkedIn",
+      "emailContact": "Gửi email",
+      "backToTop": "Lên đầu trang"
+    },
+    "nav": {
+      "skills": "Kỹ năng",
+      "projects": "Dự án",
+      "experience": "Kinh nghiệm",
+      "contact": "Liên hệ"
+    },
+    "hero": {
+      "badge": "Sẵn sàng cho cơ hội mới",
+      "stats": {
+        "yearsExperience": "Năm kinh nghiệm",
+        "projectsDelivered": "Dự án đã giao",
+        "architectureExpert": "Chuyên gia kiến trúc"
+      },
+      "links": {
+        "github": "GitHub"
+      },
+      "cta": {
+        "getInTouch": "Liên hệ",
+        "viewResume": "Xem CV"
+      },
+      "scroll": "Cuộn"
+    },
+    "skills": {
+      "badge": "Công nghệ tôi sử dụng",
+      "title": "Kỹ năng kỹ thuật",
+      "subtitle": "Bộ công cụ toàn diện được xây dựng trong hơn 3 năm phát triển chuyên nghiệp",
+      "primary": "Chính",
+      "categories": {
+        "languages": "Ngôn ngữ",
+        "databases": "Cơ sở dữ liệu",
+        "architecture": "Kiến trúc",
+        "principles": "Nguyên tắc",
+        "tools": "Công cụ & Môi trường"
+      },
+      "toolsDescription": "Hệ sinh thái phát triển tôi sử dụng hằng ngày"
+    },
+    "projects": {
+      "badge": "Những gì tôi đã xây dựng",
+      "title": "Dự án nổi bật",
+      "subtitle": "Một số dự án thể hiện kinh nghiệm của tôi về backend architecture, system design và full-stack development.",
+      "featured": "Nổi bật",
+      "viewAllExperience": "Xem toàn bộ kinh nghiệm"
+    },
+    "experience": {
+      "badge": "Hành trình sự nghiệp",
+      "title": "Kinh nghiệm chuyên môn",
+      "subtitle": "Hành trình của tôi trong ngành công nghệ, xây dựng hệ thống mở rộng và dẫn dắt đội phát triển",
+      "techStack": "Công nghệ sử dụng"
+    },
+    "contact": {
+      "badge": "Kết nối cùng tôi",
+      "title": "Liên hệ",
+      "subtitle": "Tôi luôn sẵn sàng trao đổi về cơ hội mới, dự án thú vị, hoặc đơn giản là trò chuyện về công nghệ.",
+      "lookingForTitle": "Tôi đang tìm kiếm",
+      "directContactTitle": "Muốn liên hệ trực tiếp?",
+      "githubProfile": "Trang GitHub",
+      "form": {
+        "name": "Tên",
+        "namePlaceholder": "Tên của bạn",
+        "email": "Email",
+        "emailPlaceholder": "email@cuaban.com",
+        "message": "Nội dung",
+        "messagePlaceholder": "Hãy chia sẻ về dự án hoặc cơ hội của bạn...",
+        "send": "Gửi tin nhắn",
+        "success": "Gửi tin nhắn thành công! Tôi sẽ phản hồi bạn sớm.",
+        "error": "Đã có lỗi xảy ra. Vui lòng thử lại hoặc gửi email trực tiếp."
+      }
+    },
+    "footer": {
+      "brandBlurb": "Backend Developer đam mê clean architecture, DDD và xây dựng hệ thống có khả năng mở rộng.",
+      "quickLinks": "Liên kết nhanh",
+      "connect": "Kết nối",
+      "madeWithPrefix": "Tạo bằng",
+      "madeWithSuffix": "tại Việt Nam",
+      "builtWith": "Xây dựng với Next.js, Tailwind CSS & Three.js"
+    }
+  },
+  "resume": {
+    "actions": {
+      "backToPortfolio": "Quay lại Portfolio",
+      "backToStyledResume": "Quay lại CV có style",
+      "harvardCv": "CV Harvard",
+      "harvardStyle": "Mẫu Harvard"
+    },
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "harvard": {
+      "conciseSummary": "Kỹ sư phần mềm với hơn 3 năm xây dựng hệ thống backend mở rộng cho giáo dục và tài chính bằng PHP/Laravel và Java/Spring Boot. Tập trung cao vào kiến trúc, khả năng bảo trì và chất lượng bàn giao."
+    },
+    "sections": {
+      "about": "Giới thiệu",
+      "technicalSkills": "Kỹ năng kỹ thuật",
+      "professionalExperience": "Kinh nghiệm làm việc",
+      "education": "Học vấn",
+      "summary": "Tóm tắt",
+      "skills": "Kỹ năng",
+      "experience": "Kinh nghiệm"
+    },
+    "labels": {
+      "languages": "Ngôn ngữ",
+      "databases": "Cơ sở dữ liệu",
+      "architecture": "Kiến trúc",
+      "principles": "Nguyên tắc",
+      "toolsEnvironment": "Công cụ & Môi trường",
+      "coreTools": "Công cụ cốt lõi"
+    },
+    "footer": {
+      "generatedFrom": "Được tạo từ"
+    }
+  }
+}

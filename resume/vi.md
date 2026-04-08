@@ -47,45 +47,41 @@ Kỹ sư Phần mềm với hơn 3 năm kinh nghiệm chuyên về **công ngh�
 ### Kỹ sư Phần mềm — Onschool Edtech Group
 *11/2022 – Hiện tại*
 
-**Student Life Cycle** — Java 21, Spring Boot · **Tech Lead**
+**SLC (Student Life Cycle)** — Java 21, Spring Boot, Next.js (React), PostgreSQL · **Tech Lead**
 - Thiết kế kiến trúc DDD + Hexagonal multi-module Maven với domain layer thuần (entities, value objects, domain services)
 - Thiết kế phân tách infrastructure layer: platform/core, platform/infrastructure, application layer
 - Triển khai JWT authentication với Spring Security và custom PermissionEvaluator cho method-level authorization
 - Cấu hình Flyway migrations và SpringDoc OpenAPI cho API documentation
+- Chuẩn hoá scripts, cấu hình và bootstrap PostgreSQL để môi trường dev có thể tái tạo nhất quán theo README
 
-**SRM System** — Lumen, Swoole · **Tech Lead** *(giai đoạn sau)*
-- Xây dựng hệ thống quản lý quan hệ sinh viên: form đăng ký contact → thu thập thông tin cho kế toán/sales → bàn giao giáo vụ quản lý hồ sơ → điều hành học tập
-- Phát triển backend async hiệu năng cao với Lumen + Swoole
+**SRM System (Student Management)** — Lumen, Laravel, React, Nuxt.js (Vue), PostgreSQL · **Tech Lead** *(giai đoạn sau)*
+- Bắt đầu ở vai trò developer (IC), sau đó đảm nhận vai trò Tech Lead ở giai đoạn sau của dự án
+- Phát triển và vận hành backend services với Lumen và Laravel, tích hợp với client React và Nuxt.js
 - Thiết kế kiến trúc Modular Monolith với composer-merge-plugin
 - Tạo platform core layer: Entity base class, Repository pattern, Hydrator, EventDispatcher
 - Triển khai Actions pattern (Use Cases) với DTOs và self-hydration cho entity mapping
 - Tích hợp Firebase push notifications và QR Bank payment APIs
-
-**Student Management System** — Laravel
-- Phát triển kiến trúc modular cho quản lý lớp học, xử lý tài chính và báo cáo
+- Hợp nhất phạm vi Student Management vào SRM để chuẩn hoá mô hình dữ liệu và luồng xử lý
+- Tăng observability với logging/tracing để debug nhanh hơn; tối ưu truy cập dữ liệu, tránh truy vấn N+1
 
 **Moodle Integration**
 - Reverse-engineered cơ chế autoload của Moodle (Frankenstyle naming convention)
 - Phát triển local plugin với external functions và web service APIs
 
-**Tech Stack:** Java/Spring Boot, Laravel, Lumen, Swoole, Nuxt.js, Next.js, MySQL, PostgreSQL, Firebase, Moodle
+**Tech Stack:** Java/Spring Boot, Laravel, Lumen, React, Nuxt.js, Next.js, MySQL, PostgreSQL, Firebase, Moodle
 
 ---
 
 ### Kỹ sư Phần mềm Freelance
-*2021 – Hiện tại*
+*2022 – Hiện tại*
 
-**Nền tảng Quản lý Tài chính**
-- Xây dựng giải pháp phần mềm tài chính hoàn chỉnh với xử lý tài liệu và quản lý đơn hàng
-- Tích hợp các workflow nghiệp vụ phức tạp cho hoạt động tài chính
+**Financial Management Platform**
+- Thiết kế nền tảng low-code dựa trên mô hình **Entity-Attribute-Value (EAV)**
+- Áp dụng **Domain-Driven Design (DDD)** trên PHP core tuân thủ PSR
+- Xây dựng **Event-Driven Architecture** với NATS làm message broker cho các luồng bất đồng bộ
+- Tối ưu tải ảnh bằng lazy loading để cải thiện hiệu năng cảm nhận
 
-**Skeleton Platform** (Low-Code Platform)
-- Thiết kế kiến trúc low-code platform sử dụng mô hình **Entity-Attribute-Value (EAV)**
-- Triển khai **Domain-Driven Design** patterns với PHP core tuân thủ PSR
-- Xây dựng kiến trúc event-driven với NATS Server làm message broker cho real-time notifications
-- Triển khai lazy loading để tối ưu hiệu suất hình ảnh
-
-**Tech Stack:** Laravel, Inertia.js, React, MongoDB, PostgreSQL, NATS Server
+**Tech Stack:** Laravel, Inertia.js, React, MongoDB, PostgreSQL, NATS
 
 ---
 

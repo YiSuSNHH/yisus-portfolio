@@ -4,10 +4,12 @@ import { Hero } from "@/components";
 import { portfolioData } from "@/data/portfolio";
 import { Mail, ExternalLink, Github, Heart, ChevronUp, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { LogoLotus } from "@/components/Logo";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { useLocale, useTranslations } from "next-intl";
 
 // Lazy load non-critical components
 const Skills = dynamic(() => import("@/components").then(mod => ({ default: mod.Skills })), {
@@ -28,9 +30,14 @@ const Contact = dynamic(() => import("@/components").then(mod => ({ default: mod
 
 export default function Home() {
   const { personal } = portfolioData;
+  const locale = useLocale();
+  const tHome = useTranslations("home");
+  const tCommon = useTranslations("common");
+  const tA11y = useTranslations("home.a11y");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const localePrefix = `/${locale}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,10 +49,10 @@ export default function Home() {
   }, []);
 
   const navLinks = [
-    { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
-    { href: "#contact", label: "Contact" },
+    { href: "#skills", label: tHome("nav.skills") },
+    { href: "#projects", label: tHome("nav.projects") },
+    { href: "#experience", label: tHome("nav.experience") },
+    { href: "#contact", label: tHome("nav.contact") },
   ];
 
   const scrollToTop = () => {
@@ -53,11 +60,12 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main lang={locale}>
       {/* Navigation */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
+        aria-label={tA11y("mainNavigation")}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-white/90 dark:bg-navy-900/90 backdrop-blur-lg shadow-lg"
@@ -66,8 +74,9 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <motion.a
-            href="/"
+            href={localePrefix}
             whileHover={{ scale: 1.05 }}
+            aria-label={tA11y("homeLink")}
             className="flex items-center gap-1.5 sm:gap-2"
           >
             <LogoLotus size={28} className="sm:w-9 sm:h-9" />
@@ -91,7 +100,7 @@ export default function Home() {
               </motion.a>
             ))}
             <motion.a
-              href="/resume"
+              href={`${localePrefix}/resume`}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
@@ -99,17 +108,22 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               className="px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all text-sm font-medium"
             >
-              View Resume
+              {tCommon("actions.viewResume")}
             </motion.a>
+            <LanguageSwitcher />
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 sm:gap-4 md:hidden">
+            <LanguageSwitcher />
             <ThemeToggle />
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+              aria-label={mobileMenuOpen ? tA11y("closeMobileMenu") : tA11y("openMobileMenu")}
               className="p-1.5 sm:p-2 text-navy-600 dark:text-navy-300"
             >
               {mobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
@@ -124,6 +138,7 @@ export default function Home() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
+              id="mobile-navigation"
               className="md:hidden bg-white/95 dark:bg-navy-900/95 backdrop-blur-lg border-t border-gray-100 dark:border-navy-700"
             >
               <div className="px-6 py-4 space-y-4">
@@ -141,14 +156,14 @@ export default function Home() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href="/resume"
+                  href={`${localePrefix}/resume`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg text-center font-medium"
                 >
-                  View Resume
+                  {tCommon("actions.viewResume")}
                 </motion.a>
               </div>
             </motion.div>
@@ -176,21 +191,22 @@ export default function Home() {
             {/* Brand */}
             <div>
               <motion.a
-                href="/"
+                href={localePrefix}
                 whileHover={{ scale: 1.05 }}
+                aria-label={tA11y("footerHomeLink")}
                 className="inline-flex items-center gap-3 mb-4"
               >
                 <LogoLotus size={48} />
                 <span className="font-serif text-3xl font-bold gold-shimmer tracking-tight">YiSuS</span>
               </motion.a>
               <p className="text-navy-400 text-sm leading-relaxed">
-                Backend Developer passionate about clean architecture, DDD, and building scalable systems.
+                {tHome("footer.brandBlurb")}
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-white mb-4">Quick Links</h4>
+              <h4 className="font-semibold text-white mb-4">{tHome("footer.quickLinks")}</h4>
               <div className="grid grid-cols-2 gap-2">
                 {navLinks.map((link) => (
                   <motion.a
@@ -203,23 +219,24 @@ export default function Home() {
                   </motion.a>
                 ))}
                 <motion.a
-                  href="/resume"
+                  href={`${localePrefix}/resume`}
                   whileHover={{ x: 5 }}
                   className="text-navy-400 hover:text-primary-400 transition-colors text-sm"
                 >
-                  View Resume
+                  {tCommon("actions.viewResume")}
                 </motion.a>
               </div>
             </div>
 
             {/* Connect */}
             <div>
-              <h4 className="font-semibold text-white mb-4">Connect</h4>
+              <h4 className="font-semibold text-white mb-4">{tHome("footer.connect")}</h4>
               <div className="flex gap-3">
                 <motion.a
                   href={personal.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={tA11y("githubProfile")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-navy-400 hover:text-primary-400 hover:bg-navy-700 transition-all"
                 >
@@ -227,6 +244,7 @@ export default function Home() {
                 </motion.a>
                 <motion.a
                   href={`mailto:${personal.email}`}
+                  aria-label={tA11y("emailContact")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-navy-400 hover:text-primary-400 hover:bg-navy-700 transition-all"
                 >
@@ -236,6 +254,7 @@ export default function Home() {
                   href={personal.linkedin || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={tA11y("linkedinProfile")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-navy-400 hover:text-primary-400 hover:bg-navy-700 transition-all"
                 >
@@ -251,12 +270,12 @@ export default function Home() {
           {/* Bottom */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-navy-400 text-sm flex items-center gap-1">
-              © {new Date().getFullYear()} {personal.name}. Made with
+              © {new Date().getFullYear()} {personal.name}. {tHome("footer.madeWithPrefix")}
               <Heart size={14} className="text-red-500 fill-red-500" />
-              in Vietnam
+              {tHome("footer.madeWithSuffix")}
             </p>
             <p className="text-navy-500 text-xs">
-              Built with Next.js, Tailwind CSS & Three.js
+              {tHome("footer.builtWith")}
             </p>
           </div>
         </div>
@@ -272,6 +291,7 @@ export default function Home() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
+            aria-label={tA11y("backToTop")}
             className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-lg hover:shadow-xl flex items-center justify-center gold-glow"
           >
             <ChevronUp size={24} />

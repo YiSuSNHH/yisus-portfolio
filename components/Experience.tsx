@@ -1,12 +1,15 @@
 "use client";
 
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData, type SupportedLocale } from "@/data/portfolio";
 import { Briefcase, Calendar, MapPin, ChevronRight, Building2, Sparkles } from "lucide-react";
 import { FadeIn } from "./animations";
 import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 export function Experience() {
-  const { experience } = portfolioData;
+  const locale = useLocale() as SupportedLocale;
+  const { experience } = getPortfolioData(locale);
+  const t = useTranslations("home.experience");
 
   return (
     <section id="experience" className="py-20 px-6 bg-gray-50 dark:bg-navy-800 relative overflow-hidden">
@@ -30,17 +33,17 @@ export function Experience() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 dark:bg-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-sm font-medium">
               <Building2 size={16} />
-              Career Journey
+              {t("badge")}
             </span>
           </motion.div>
 
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-center">
             <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 dark:from-primary-400 dark:via-primary-300 dark:to-primary-400 bg-clip-text text-transparent">
-              Professional Experience
+              {t("title")}
             </span>
           </h2>
           <p className="text-navy-500 dark:text-navy-400 text-center mb-12 max-w-2xl mx-auto">
-            My journey through the tech industry, building scalable systems and leading development teams
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -166,7 +169,7 @@ export function Experience() {
                       className="mt-8 pt-6 border-t border-gray-100 dark:border-navy-700"
                     >
                       <p className="text-xs text-navy-500 dark:text-navy-400 uppercase tracking-wider mb-3 font-medium">
-                        Tech Stack
+                        {t("techStack")}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {exp.techStack.map((tech, tIdx) => (

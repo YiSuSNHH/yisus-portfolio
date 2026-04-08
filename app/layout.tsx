@@ -42,7 +42,12 @@ export const metadata: Metadata = {
   publisher: "Nguyen Huy Hung",
   metadataBase: new URL("https://yisus.dev"),
   alternates: {
-    canonical: "/",
+    canonical: "/en",
+    languages: {
+      "en-US": "/en",
+      "vi-VN": "/vi",
+      "x-default": "/en",
+    },
   },
   openGraph: {
     title: "YiSuS | Nguyen Huy Hung - Software Engineer",
@@ -93,29 +98,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://vercel.app" />
-        
-        {/* Preload critical CSS */}
-        <link
-          rel="preload"
-          href="/_next/static/css/app/layout.css"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        
-        {/* Critical inline styles to prevent FOUC */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            body { 
-              font-family: system-ui, -apple-system, sans-serif;
-              background: #FFFEF5;
-              color: #102A43;
-            }
-            .dark body {
-              background: #102A43;
-              color: #F0F4F8;
-            }
-          `
-        }} />
       </head>
       <body
         className={`${crimsonPro.variable} ${inter.variable} font-sans antialiased bg-[var(--background)] text-[var(--foreground)]`}

@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "prepare": "node scripts/install-hooks.mjs",
+    "hooks:install": "node scripts/install-hooks.mjs",
+    "check:translation-integrity": "node scripts/check-translation-integrity.mjs",
+    "check:content-sync": "node scripts/check-content-sync.mjs --format both",
+    "check:content-sync:json": "node scripts/check-content-sync.mjs --format json"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -14,11 +21,13 @@
     "framer-motion": "^12.27.0",
     "lucide-react": "^0.562.0",
     "next": "15.1.9",
+    "next-intl": "^4.8.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "three": "^0.182.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

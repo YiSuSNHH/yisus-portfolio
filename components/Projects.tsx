@@ -1,9 +1,10 @@
 "use client";
 
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData, type SupportedLocale } from "@/data/portfolio";
 import { Code2, Rocket, Star, Sparkles, ArrowRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "./animations";
 import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 const projectColors = [
   "from-amber-500 to-orange-500",
@@ -13,7 +14,9 @@ const projectColors = [
 ];
 
 export function Projects() {
-  const { experience } = portfolioData;
+  const locale = useLocale() as SupportedLocale;
+  const { experience } = getPortfolioData(locale);
+  const t = useTranslations("home.projects");
 
   // Flatten all projects from experience
   const allProjects = experience.flatMap((exp) =>
@@ -54,18 +57,17 @@ export function Projects() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 dark:bg-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-sm font-medium">
               <Rocket size={16} />
-              What I&apos;ve Built
+              {t("badge")}
             </span>
           </motion.div>
 
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-center">
             <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 dark:from-primary-400 dark:via-primary-300 dark:to-primary-400 bg-clip-text text-transparent">
-              Featured Projects
+              {t("title")}
             </span>
           </h2>
           <p className="text-navy-500 dark:text-navy-400 text-center mb-12 max-w-2xl mx-auto">
-            A selection of projects showcasing my experience in backend
-            architecture, system design, and full-stack development.
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -100,7 +102,7 @@ export function Projects() {
                         {index === 0 && (
                           <span className="inline-flex items-center gap-1 text-xs bg-gradient-to-r from-primary-500 to-primary-600 text-white px-2 py-1 rounded-md">
                             <Star size={10} fill="currentColor" />
-                            Featured
+                            {t("featured")}
                           </span>
                         )}
                       </div>
@@ -173,7 +175,7 @@ export function Projects() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500/10 to-primary-600/10 dark:from-primary-500/20 dark:to-primary-600/20 text-primary-600 dark:text-primary-400 rounded-xl font-medium hover:from-primary-500/20 hover:to-primary-600/20 dark:hover:from-primary-500/30 dark:hover:to-primary-600/30 transition-all border border-primary-500/20"
             >
-              View all experience
+              {t("viewAllExperience")}
               <ArrowRight size={18} />
             </motion.a>
           </motion.div>
