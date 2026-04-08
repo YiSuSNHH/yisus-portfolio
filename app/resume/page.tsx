@@ -1,12 +1,18 @@
 "use client";
 
 import { portfolioData } from "@/data/portfolio";
-import { Printer, ArrowLeft, Mail, Phone, MapPin, Github, Linkedin, Sparkles } from "lucide-react";
+import { Printer, ArrowLeft, Mail, Phone, MapPin, Github, Linkedin, Sparkles, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function ResumePage() {
   const { personal, about, skills, experience, education } = portfolioData;
+  const tResume = useTranslations("resume");
+  const tCommon = useTranslations("common");
+  const locale = useLocale();
+  const localePrefix = `/${locale}`;
 
   const handlePrint = () => {
     window.print();
@@ -15,17 +21,27 @@ export default function ResumePage() {
   return (
     <>
       {/* Print Controls - Hidden when printing */}
-      <div className="no-print fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-navy-900/90 backdrop-blur-lg border-b border-gray-200 dark:border-navy-700 py-3 sm:py-4 px-4 sm:px-6">
+      <div className="no-print fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-navy-900/90 backdrop-blur-lg border-b border-gray-200 dark:border-navy-800 py-3 sm:py-4 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <motion.a
-            href="/"
+            href={localePrefix}
             whileHover={{ x: -5 }}
             className="flex items-center gap-1.5 sm:gap-2 text-navy-600 dark:text-navy-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
           >
             <ArrowLeft size={18} className="sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base">Back to Portfolio</span>
+            <span className="text-sm sm:text-base">{tResume("actions.backToPortfolio")}</span>
           </motion.a>
           <div className="flex items-center gap-2 sm:gap-4">
+            <motion.a
+              href={`${localePrefix}/resume/harvard`}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-navy-600 dark:text-navy-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              <FileText size={16} />
+              <span className="text-sm">{tResume("actions.harvardCv")}</span>
+            </motion.a>
+            <LanguageSwitcher />
             <ThemeToggle />
             <motion.button
               onClick={handlePrint}
@@ -34,21 +50,21 @@ export default function ResumePage() {
               className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg hover:shadow-xl text-sm sm:text-base"
             >
               <Printer size={16} className="sm:w-[18px] sm:h-[18px]" />
-              <span className="hidden xs:inline">Print / Save PDF</span>
-              <span className="xs:hidden">Print</span>
+              <span className="hidden xs:inline">{tCommon("actions.printSavePdf")}</span>
+              <span className="xs:hidden">{tCommon("actions.print")}</span>
             </motion.button>
           </div>
         </div>
       </div>
 
       {/* Resume Content */}
-      <main className="min-h-screen bg-gray-50 dark:bg-navy-800 print:bg-white">
+      <main lang={locale} className="min-h-screen bg-gray-50 dark:bg-navy-800 print:bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 mt-16 sm:mt-20 print:mt-0 print:px-0">
           {/* Header Card */}
           <motion.header
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative bg-white dark:bg-navy-900 rounded-2xl p-8 mb-8 shadow-lg border border-gray-100 dark:border-navy-700 overflow-hidden print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-6"
+            className="relative bg-white dark:bg-navy-900 rounded-2xl p-8 mb-8 shadow-lg border border-gray-100 dark:border-navy-800 overflow-hidden print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-6"
           >
             {/* Decorative background */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-500/10 to-transparent rounded-bl-full print:hidden" />
@@ -100,7 +116,7 @@ export default function ResumePage() {
                   className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-primary-500/10 hover:text-primary-600 dark:hover:text-primary-400 transition-all print:bg-transparent print:p-0"
                 >
                   <Github size={14} />
-                  <span>GitHub</span>
+                  <span>{tResume("links.github")}</span>
                 </a>
                 <a
                   href={personal.linkedin}
@@ -109,7 +125,7 @@ export default function ResumePage() {
                   className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-lg text-navy-600 dark:text-navy-300 hover:bg-primary-500/10 hover:text-primary-600 dark:hover:text-primary-400 transition-all print:bg-transparent print:p-0"
                 >
                   <Linkedin size={14} />
-                  <span>LinkedIn</span>
+                  <span>{tResume("links.linkedin")}</span>
                 </a>
               </div>
             </div>
@@ -120,11 +136,11 @@ export default function ResumePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white dark:bg-navy-900 rounded-2xl p-6 mb-6 shadow-lg border border-gray-100 dark:border-navy-700 print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-4"
+            className="bg-white dark:bg-navy-900 rounded-2xl p-6 mb-6 shadow-lg border border-gray-100 dark:border-navy-800 print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-4"
           >
             <h2 className="font-serif text-2xl font-bold mb-4 flex items-center gap-2">
               <span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full print:hidden" />
-              <span className="text-navy-900 dark:text-white print:text-navy-900">About Me</span>
+              <span className="text-navy-900 dark:text-white print:text-navy-900">{tResume("sections.about")}</span>
             </h2>
             <p className="text-navy-600 dark:text-navy-300 leading-relaxed print:text-gray-700">{about.summary}</p>
           </motion.section>
@@ -134,15 +150,15 @@ export default function ResumePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white dark:bg-navy-900 rounded-2xl p-6 mb-6 shadow-lg border border-gray-100 dark:border-navy-700 print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-4"
+            className="bg-white dark:bg-navy-900 rounded-2xl p-6 mb-6 shadow-lg border border-gray-100 dark:border-navy-800 print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-4"
           >
             <h2 className="font-serif text-2xl font-bold mb-4 flex items-center gap-2">
               <span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full print:hidden" />
-              <span className="text-navy-900 dark:text-white print:text-navy-900">Technical Skills</span>
+              <span className="text-navy-900 dark:text-white print:text-navy-900">{tResume("sections.technicalSkills")}</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl print:bg-transparent print:p-0">
-                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">Languages</h3>
+                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">{tResume("labels.languages")}</h3>
                 <p className="text-navy-600 dark:text-navy-300 text-sm print:text-gray-600">
                   {skills.languages
                     .map((l) => `${l.name} (${l.frameworks.join(", ")})`)
@@ -150,19 +166,19 @@ export default function ResumePage() {
                 </p>
               </div>
               <div className="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl print:bg-transparent print:p-0">
-                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">Databases</h3>
+                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">{tResume("labels.databases")}</h3>
                 <p className="text-navy-600 dark:text-navy-300 text-sm print:text-gray-600">{skills.databases.join(", ")}</p>
               </div>
               <div className="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl print:bg-transparent print:p-0">
-                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">Architecture</h3>
+                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">{tResume("labels.architecture")}</h3>
                 <p className="text-navy-600 dark:text-navy-300 text-sm print:text-gray-600">{skills.architecture.join(", ")}</p>
               </div>
               <div className="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl print:bg-transparent print:p-0">
-                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">Principles</h3>
+                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">{tResume("labels.principles")}</h3>
                 <p className="text-navy-600 dark:text-navy-300 text-sm print:text-gray-600">{skills.principles.join(", ")}</p>
               </div>
               <div className="md:col-span-2 p-4 bg-gray-50 dark:bg-navy-800 rounded-xl print:bg-transparent print:p-0">
-                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">Tools & Environment</h3>
+                <h3 className="font-semibold text-navy-900 dark:text-white mb-2 text-sm uppercase tracking-wider print:text-navy-900">{tResume("labels.toolsEnvironment")}</h3>
                 <p className="text-navy-600 dark:text-navy-300 text-sm print:text-gray-600">{skills.tools.join(", ")}</p>
               </div>
             </div>
@@ -173,11 +189,11 @@ export default function ResumePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white dark:bg-navy-900 rounded-2xl p-6 mb-6 shadow-lg border border-gray-100 dark:border-navy-700 print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-4"
+            className="bg-white dark:bg-navy-900 rounded-2xl p-6 mb-6 shadow-lg border border-gray-100 dark:border-navy-800 print:shadow-none print:border-0 print:rounded-none print:p-0 print:mb-4"
           >
             <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full print:hidden" />
-              <span className="text-navy-900 dark:text-white print:text-navy-900">Professional Experience</span>
+              <span className="text-navy-900 dark:text-white print:text-navy-900">{tResume("sections.professionalExperience")}</span>
             </h2>
             <div className="space-y-8 print:space-y-6">
               {experience.map((exp, index) => (
@@ -236,11 +252,11 @@ export default function ResumePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-navy-700 print:shadow-none print:border-0 print:rounded-none print:p-0"
+            className="bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-navy-800 print:shadow-none print:border-0 print:rounded-none print:p-0"
           >
             <h2 className="font-serif text-2xl font-bold mb-4 flex items-center gap-2">
               <span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full print:hidden" />
-              <span className="text-navy-900 dark:text-white print:text-navy-900">Education</span>
+              <span className="text-navy-900 dark:text-white print:text-navy-900">{tResume("sections.education")}</span>
             </h2>
             <div className="flex flex-wrap justify-between items-start gap-4 p-4 bg-gray-50 dark:bg-navy-800 rounded-xl print:bg-transparent print:p-0">
               <div>
@@ -260,7 +276,7 @@ export default function ResumePage() {
             transition={{ delay: 0.6 }}
             className="text-center mt-8 text-sm text-navy-400 dark:text-navy-500 print:hidden"
           >
-            <p>Generated from <span className="text-primary-500">yisus.dev</span></p>
+            <p>{tResume("footer.generatedFrom")} <span className="text-primary-500">yisus.dev</span></p>
           </motion.div>
         </div>
       </main>

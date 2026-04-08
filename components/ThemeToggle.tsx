@@ -4,6 +4,7 @@ import { useTheme } from "./ThemeProvider";
 import { Sun, Moon, Monitor } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -27,19 +28,27 @@ export function ThemeToggle() {
 
 function ThemeToggleInner() {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations("common.theme");
+  const tAria = useTranslations("common.aria");
 
   const themes = [
-    { value: "light" as const, icon: Sun, label: "Light" },
-    { value: "dark" as const, icon: Moon, label: "Dark" },
-    { value: "system" as const, icon: Monitor, label: "System" },
+    { value: "light" as const, icon: Sun, label: t("light"), ariaLabel: tAria("themeLight") },
+    { value: "dark" as const, icon: Moon, label: t("dark"), ariaLabel: tAria("themeDark") },
+    { value: "system" as const, icon: Monitor, label: t("system"), ariaLabel: tAria("themeSystem") },
   ];
 
   return (
-    <div className="flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 bg-gray-100 dark:bg-navy-800 rounded-lg">
-      {themes.map(({ value, icon: Icon, label }) => (
+    <div
+      className="flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 bg-gray-100 dark:bg-navy-800 rounded-lg"
+      role="group"
+      aria-label={tAria("themeSwitcher")}
+    >
+      {themes.map(({ value, icon: Icon, label, ariaLabel }) => (
         <motion.button
           key={value}
           onClick={() => setTheme(value)}
+          aria-label={ariaLabel}
+          aria-pressed={theme === value}
           className={`relative p-1.5 sm:p-2 rounded-md transition-colors ${
             theme === value
               ? "text-primary-600 dark:text-primary-400"

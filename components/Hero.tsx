@@ -1,20 +1,24 @@
 "use client";
 
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData, type SupportedLocale } from "@/data/portfolio";
 import { Mail, Phone, ExternalLink, MapPin, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { useLocale, useTranslations } from "next-intl";
 
 const HeroBackground = dynamic(
   () => import("./HeroBackground").then((mod) => mod.HeroBackground),
-  { 
+  {
     ssr: false,
     loading: () => null
   }
 );
 
 export function Hero() {
-  const { personal, about } = portfolioData;
+  const locale = useLocale() as SupportedLocale;
+  const { personal, about } = getPortfolioData(locale);
+  const t = useTranslations("home.hero");
+  const localePrefix = `/${locale}`;
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-white dark:from-navy-900 dark:to-navy-800 px-6 py-20 relative overflow-hidden">
@@ -34,7 +38,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white/80 dark:bg-navy-800/80 backdrop-blur-sm rounded-full border border-primary-500/20 shadow-lg"
         >
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <span className="text-sm text-navy-600 dark:text-navy-300">Available for opportunities</span>
+          <span className="text-sm text-navy-600 dark:text-navy-300">{t("badge")}</span>
         </motion.div>
 
         {/* Nickname */}
@@ -77,9 +81,9 @@ export function Hero() {
           className="flex flex-wrap justify-center gap-6 md:gap-10 mb-10"
         >
           {[
-            { value: "3+", label: "Years Experience" },
-            { value: "10+", label: "Projects Delivered" },
-            { value: "DDD", label: "Architecture Expert" },
+            { value: "3+", label: t("stats.yearsExperience") },
+            { value: "10+", label: t("stats.projectsDelivered") },
+            { value: "DDD", label: t("stats.architectureExpert") },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -129,7 +133,7 @@ export function Hero() {
             className="flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-navy-800/50 backdrop-blur-sm rounded-lg hover:text-primary-600 dark:hover:text-primary-400 transition-all hover:shadow-lg"
           >
             <ExternalLink size={18} />
-            <span className="text-sm md:text-base">GitHub</span>
+            <span className="text-sm md:text-base">{t("links.github")}</span>
           </motion.a>
           <motion.span
             whileHover={{ scale: 1.05, y: -2 }}
@@ -168,7 +172,7 @@ export function Hero() {
             whileTap={{ scale: 0.95 }}
             className="group relative px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-medium overflow-hidden"
           >
-            <span className="relative z-10">Get in Touch</span>
+            <span className="relative z-10">{t("cta.getInTouch")}</span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700"
               initial={{ x: "100%" }}
@@ -177,12 +181,12 @@ export function Hero() {
             />
           </motion.a>
           <motion.a
-            href="/resume"
+            href={`${localePrefix}/resume`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 border-2 border-primary-500 text-primary-600 dark:text-primary-400 rounded-xl hover:bg-primary-500 hover:text-white transition-all font-medium backdrop-blur-sm bg-white/30 dark:bg-navy-800/30"
           >
-            View Resume
+            {t("cta.viewResume")}
           </motion.a>
         </motion.div>
       </div>
@@ -199,7 +203,7 @@ export function Hero() {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="flex flex-col items-center gap-2 text-navy-400 dark:text-navy-500"
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <span className="text-xs uppercase tracking-widest">{t("scroll")}</span>
           <ChevronDown size={20} />
         </motion.div>
       </motion.div>

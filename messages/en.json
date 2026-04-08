@@ -1,0 +1,149 @@
+{
+  "common": {
+    "locale": "English",
+    "loading": "Loading...",
+    "aria": {
+      "languageSwitcher": "Language switcher",
+      "themeSwitcher": "Theme switcher",
+      "themeLight": "Use light theme",
+      "themeDark": "Use dark theme",
+      "themeSystem": "Use system theme",
+      "switchToEnglish": "Switch language to English",
+      "switchToVietnamese": "Switch language to Vietnamese"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "actions": {
+      "viewResume": "View Resume",
+      "printSavePdf": "Print / Save PDF",
+      "print": "Print"
+    }
+  },
+  "home": {
+    "a11y": {
+      "mainNavigation": "Main navigation",
+      "homeLink": "Go to homepage",
+      "footerHomeLink": "Go to homepage",
+      "openMobileMenu": "Open menu",
+      "closeMobileMenu": "Close menu",
+      "githubProfile": "Open GitHub profile",
+      "linkedinProfile": "Open LinkedIn profile",
+      "emailContact": "Send email",
+      "backToTop": "Back to top"
+    },
+    "nav": {
+      "skills": "Skills",
+      "projects": "Projects",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
+    "hero": {
+      "badge": "Available for opportunities",
+      "stats": {
+        "yearsExperience": "Years Experience",
+        "projectsDelivered": "Projects Delivered",
+        "architectureExpert": "Architecture Expert"
+      },
+      "links": {
+        "github": "GitHub"
+      },
+      "cta": {
+        "getInTouch": "Get in Touch",
+        "viewResume": "View Resume"
+      },
+      "scroll": "Scroll"
+    },
+    "skills": {
+      "badge": "What I Work With",
+      "title": "Technical Skills",
+      "subtitle": "A comprehensive toolkit built over 3+ years of professional development",
+      "primary": "Primary",
+      "categories": {
+        "languages": "Languages",
+        "databases": "Databases",
+        "architecture": "Architecture",
+        "principles": "Principles",
+        "tools": "Tools & Environment"
+      },
+      "toolsDescription": "Development ecosystem I use daily"
+    },
+    "projects": {
+      "badge": "What I've Built",
+      "title": "Featured Projects",
+      "subtitle": "A selection of projects showcasing my experience in backend architecture, system design, and full-stack development.",
+      "featured": "Featured",
+      "viewAllExperience": "View all experience"
+    },
+    "experience": {
+      "badge": "Career Journey",
+      "title": "Professional Experience",
+      "subtitle": "My journey through the tech industry, building scalable systems and leading development teams",
+      "techStack": "Tech Stack"
+    },
+    "contact": {
+      "badge": "Let's Connect",
+      "title": "Get in Touch",
+      "subtitle": "I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.",
+      "lookingForTitle": "What I'm Looking For",
+      "directContactTitle": "Prefer direct contact?",
+      "githubProfile": "GitHub Profile",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "emailPlaceholder": "your@email.com",
+        "message": "Message",
+        "messagePlaceholder": "Tell me about your project or opportunity...",
+        "send": "Send Message",
+        "success": "Message sent successfully! I'll get back to you soon.",
+        "error": "Something went wrong. Please try again or email me directly."
+      }
+    },
+    "footer": {
+      "brandBlurb": "Backend Developer passionate about clean architecture, DDD, and building scalable systems.",
+      "quickLinks": "Quick Links",
+      "connect": "Connect",
+      "madeWithPrefix": "Made with",
+      "madeWithSuffix": "in Vietnam",
+      "builtWith": "Built with Next.js, Tailwind CSS & Three.js"
+    }
+  },
+  "resume": {
+    "actions": {
+      "backToPortfolio": "Back to Portfolio",
+      "backToStyledResume": "Back to Styled Resume",
+      "harvardCv": "Harvard CV",
+      "harvardStyle": "Harvard Style"
+    },
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "harvard": {
+      "conciseSummary": "Software Engineer with 3+ years building scalable backend systems for edtech and finance using PHP/Laravel and Java/Spring Boot. Strong focus on architecture, maintainability, and delivery quality."
+    },
+    "sections": {
+      "about": "About Me",
+      "technicalSkills": "Technical Skills",
+      "professionalExperience": "Professional Experience",
+      "education": "Education",
+      "summary": "Summary",
+      "skills": "Skills",
+      "experience": "Experience"
+    },
+    "labels": {
+      "languages": "Languages",
+      "databases": "Databases",
+      "architecture": "Architecture",
+      "principles": "Principles",
+      "toolsEnvironment": "Tools & Environment",
+      "coreTools": "Core Tools"
+    },
+    "footer": {
+      "generatedFrom": "Generated from"
+    }
+  }
+}

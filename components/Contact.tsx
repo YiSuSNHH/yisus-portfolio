@@ -1,13 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData, type SupportedLocale } from "@/data/portfolio";
 import { Send, CheckCircle, AlertCircle, MessageCircle, Sparkles, Heart, Mail, Phone, MapPin, Github } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "./animations";
 import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 export function Contact() {
-  const { personal, lookingFor } = portfolioData;
+  const locale = useLocale() as SupportedLocale;
+  const { personal, lookingFor } = getPortfolioData(locale);
+  const t = useTranslations("home.contact");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -89,18 +92,17 @@ export function Contact() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 dark:bg-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-sm font-medium">
               <MessageCircle size={16} />
-              Let&apos;s Connect
+              {t("badge")}
             </span>
           </motion.div>
 
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-center">
             <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 dark:from-primary-400 dark:via-primary-300 dark:to-primary-400 bg-clip-text text-transparent">
-              Get in Touch
+              {t("title")}
             </span>
           </h2>
           <p className="text-navy-500 dark:text-navy-400 text-center mb-12 max-w-2xl mx-auto">
-            I&apos;m always open to discussing new opportunities, interesting projects,
-            or just having a chat about technology.
+            {t("subtitle")}
           </p>
         </FadeIn>
 
@@ -110,7 +112,7 @@ export function Contact() {
             <div>
               <h3 className="font-serif text-2xl font-semibold text-navy-900 dark:text-white mb-6 flex items-center gap-2">
                 <Sparkles className="text-primary-500" size={24} />
-                What I&apos;m Looking For
+                {t("lookingForTitle")}
               </h3>
               <StaggerContainer className="space-y-4">
                 {lookingFor.map((item, index) => (
@@ -144,7 +146,7 @@ export function Contact() {
 
                 <h4 className="font-medium text-navy-900 dark:text-white mb-4 flex items-center gap-2">
                   <Heart className="text-red-500" size={18} />
-                  Prefer direct contact?
+                  {t("directContactTitle")}
                 </h4>
                 <div className="space-y-3">
                   <motion.a
@@ -182,7 +184,7 @@ export function Contact() {
                       <Github size={18} className="text-purple-600 dark:text-purple-400" />
                     </span>
                     <span className="text-purple-600 dark:text-purple-400 group-hover:underline">
-                      GitHub Profile
+                      {t("githubProfile")}
                     </span>
                   </motion.a>
                   <div className="flex items-center gap-3 text-sm">
@@ -219,7 +221,7 @@ export function Contact() {
                       htmlFor="name"
                       className="block text-sm font-medium text-navy-700 dark:text-navy-300 mb-2"
                     >
-                      Name
+                      {t("form.name")}
                     </label>
                     <motion.input
                       type="text"
@@ -228,7 +230,7 @@ export function Contact() {
                       required
                       whileFocus={{ scale: 1.01 }}
                       className="w-full px-4 py-3 border border-gray-200 dark:border-navy-600 bg-gray-50 dark:bg-navy-800 text-navy-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 outline-none transition-all"
-                      placeholder="Your name"
+                      placeholder={t("form.namePlaceholder")}
                     />
                   </div>
 
@@ -237,7 +239,7 @@ export function Contact() {
                       htmlFor="email"
                       className="block text-sm font-medium text-navy-700 dark:text-navy-300 mb-2"
                     >
-                      Email
+                      {t("form.email")}
                     </label>
                     <motion.input
                       type="email"
@@ -246,7 +248,7 @@ export function Contact() {
                       required
                       whileFocus={{ scale: 1.01 }}
                       className="w-full px-4 py-3 border border-gray-200 dark:border-navy-600 bg-gray-50 dark:bg-navy-800 text-navy-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 outline-none transition-all"
-                      placeholder="your@email.com"
+                      placeholder={t("form.emailPlaceholder")}
                     />
                   </div>
 
@@ -255,7 +257,7 @@ export function Contact() {
                       htmlFor="message"
                       className="block text-sm font-medium text-navy-700 dark:text-navy-300 mb-2"
                     >
-                      Message
+                      {t("form.message")}
                     </label>
                     <motion.textarea
                       id="message"
@@ -264,7 +266,7 @@ export function Contact() {
                       required
                       whileFocus={{ scale: 1.01 }}
                       className="w-full px-4 py-3 border border-gray-200 dark:border-navy-600 bg-gray-50 dark:bg-navy-800 text-navy-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 outline-none transition-all resize-none"
-                      placeholder="Tell me about your project or opportunity..."
+                      placeholder={t("form.messagePlaceholder")}
                     />
                   </div>
 
@@ -283,7 +285,7 @@ export function Contact() {
                       />
                     ) : (
                       <>
-                        Send Message
+                        {t("form.send")}
                         <Send size={18} />
                       </>
                     )}
@@ -296,7 +298,7 @@ export function Contact() {
                       className="flex items-center gap-2 text-green-600 dark:text-green-400 text-sm bg-green-500/10 p-3 rounded-lg"
                     >
                       <CheckCircle size={18} />
-                      <span>Message sent successfully! I&apos;ll get back to you soon.</span>
+                      <span>{t("form.success")}</span>
                     </motion.div>
                   )}
 
@@ -307,9 +309,7 @@ export function Contact() {
                       className="flex items-center gap-2 text-red-600 dark:text-red-400 text-sm bg-red-500/10 p-3 rounded-lg"
                     >
                       <AlertCircle size={18} />
-                      <span>
-                        Something went wrong. Please try again or email me directly.
-                      </span>
+                      <span>{t("form.error")}</span>
                     </motion.div>
                   )}
                 </form>
