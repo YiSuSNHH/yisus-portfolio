@@ -1,283 +1,131 @@
 "use client";
 
-import { Hero } from "@/components";
-import { portfolioData } from "@/data/portfolio";
-import { Mail, ExternalLink, Github, Heart, ChevronUp, Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { useState } from "react";
+import Link from "next/link";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Contact } from "@/components/Contact";
+import { Experience } from "@/components/Experience";
+import { Hero } from "@/components/Hero";
 import { LogoLotus } from "@/components/Logo";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import { Projects } from "@/components/Projects";
+import { Skills } from "@/components/Skills";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { portfolioData } from "@/data/portfolio";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
-// Lazy load non-critical components
-const Skills = dynamic(() => import("@/components").then(mod => ({ default: mod.Skills })), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
-});
-
-const Projects = dynamic(() => import("@/components").then(mod => ({ default: mod.Projects })), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
-});
-
-const Experience = dynamic(() => import("@/components").then(mod => ({ default: mod.Experience })), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
-});
-
-const Contact = dynamic(() => import("@/components").then(mod => ({ default: mod.Contact })), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full"></div></div>
-});
+const navLinks = [
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Work" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Home() {
   const { personal } = portfolioData;
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showBackToTop, setShowBackToTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      setShowBackToTop(window.scrollY > 500);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
-    { href: "#contact", label: "Contact" },
-  ];
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
-    <main>
-      {/* Navigation */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/90 dark:bg-navy-900/90 backdrop-blur-lg shadow-lg"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
-          <motion.a
-            href="/"
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-1.5 sm:gap-2"
-          >
-            <LogoLotus size={28} className="sm:w-9 sm:h-9" />
-            <span className="font-serif text-lg sm:text-2xl font-bold gold-shimmer tracking-tight hidden xs:block">YiSuS</span>
-          </motion.a>
+    <main className="bg-background text-foreground">
+      <header className="fixed inset-x-0 top-0 z-50 border-b bg-background/92 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="Nguyen Huy Hung home">
+            <LogoLotus size={26} />
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground">
+              Nguyen Huy Hung
+            </span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map((link, index) => (
-              <motion.a
-                key={link.href}
-                href={link.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
-                className="text-sm text-navy-600 dark:text-navy-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors relative group"
-              >
+          <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="text-sm text-muted-foreground transition hover:text-foreground">
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all group-hover:w-full" />
-              </motion.a>
+              </a>
             ))}
-            <motion.a
-              href="/resume"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(212, 175, 55, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all text-sm font-medium"
-            >
-              View Resume
-            </motion.a>
+            <Button asChild size="sm" className="rounded-md">
+              <Link href="/resume">Resume</Link>
+            </Button>
             <ThemeToggle />
-          </div>
+          </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 sm:gap-4 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle />
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 sm:p-2 text-navy-600 dark:text-navy-300"
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
-            </motion.button>
+              {mobileMenuOpen ? <X /> : <Menu />}
+            </Button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white/95 dark:bg-navy-900/95 backdrop-blur-lg border-t border-gray-100 dark:border-navy-700"
+            <motion.nav
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              className="border-t bg-background px-4 py-4 md:hidden"
+              aria-label="Mobile navigation"
             >
-              <div className="px-6 py-4 space-y-4">
-                {navLinks.map((link, index) => (
-                  <motion.a
+              <div className="mx-auto grid max-w-7xl gap-3">
+                {navLinks.map((link) => (
+                  <a
                     key={link.href}
                     href={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-navy-600 dark:text-navy-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2"
+                    className="py-1 text-sm text-muted-foreground transition hover:text-foreground"
                   >
                     {link.label}
-                  </motion.a>
+                  </a>
                 ))}
-                <motion.a
-                  href="/resume"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg text-center font-medium"
-                >
-                  View Resume
-                </motion.a>
+                <Button asChild size="sm" className="mt-1 w-fit rounded-md">
+                  <Link href="/resume">Resume</Link>
+                </Button>
               </div>
-            </motion.div>
+            </motion.nav>
           )}
         </AnimatePresence>
-      </motion.nav>
+      </header>
 
-      {/* Sections */}
       <Hero />
       <Skills />
       <Projects />
       <Experience />
       <Contact />
 
-      {/* Footer */}
-      <footer className="relative py-12 px-6 bg-navy-900 dark:bg-navy-950 text-white overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {/* Brand */}
-            <div>
-              <motion.a
-                href="/"
-                whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center gap-3 mb-4"
-              >
-                <LogoLotus size={48} />
-                <span className="font-serif text-3xl font-bold gold-shimmer tracking-tight">YiSuS</span>
-              </motion.a>
-              <p className="text-navy-400 text-sm leading-relaxed">
-                Backend Developer passionate about clean architecture, DDD, and building scalable systems.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-semibold text-white mb-4">Quick Links</h4>
-              <div className="grid grid-cols-2 gap-2">
-                {navLinks.map((link) => (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    whileHover={{ x: 5 }}
-                    className="text-navy-400 hover:text-primary-400 transition-colors text-sm"
-                  >
-                    {link.label}
-                  </motion.a>
-                ))}
-                <motion.a
-                  href="/resume"
-                  whileHover={{ x: 5 }}
-                  className="text-navy-400 hover:text-primary-400 transition-colors text-sm"
-                >
-                  View Resume
-                </motion.a>
-              </div>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <h4 className="font-semibold text-white mb-4">Connect</h4>
-              <div className="flex gap-3">
-                <motion.a
-                  href={personal.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-navy-400 hover:text-primary-400 hover:bg-navy-700 transition-all"
-                >
-                  <Github size={20} />
-                </motion.a>
-                <motion.a
-                  href={`mailto:${personal.email}`}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-navy-400 hover:text-primary-400 hover:bg-navy-700 transition-all"
-                >
-                  <Mail size={20} />
-                </motion.a>
-                <motion.a
-                  href={personal.linkedin || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-navy-400 hover:text-primary-400 hover:bg-navy-700 transition-all"
-                >
-                  <ExternalLink size={20} />
-                </motion.a>
-              </div>
+      <footer className="bg-zinc-950 px-4 py-9 text-zinc-300 md:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <p className="text-sm">
+              Nguyen Huy Hung. Technical Engineer.
+            </p>
+            <div className="flex flex-wrap gap-4 text-sm text-zinc-400">
+              <a className="inline-flex items-center gap-2 transition hover:text-zinc-100" href={personal.github} target="_blank" rel="noopener noreferrer">
+                <Github size={15} />
+                GitHub
+              </a>
+              <a className="inline-flex items-center gap-2 transition hover:text-zinc-100" href={personal.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin size={15} />
+                LinkedIn
+              </a>
+              <a className="inline-flex items-center gap-2 transition hover:text-zinc-100" href={`mailto:${personal.email}`}>
+                <Mail size={15} />
+                Email
+              </a>
             </div>
           </div>
-
-          {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-transparent via-navy-700 to-transparent mb-8" />
-
-          {/* Bottom */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-navy-400 text-sm flex items-center gap-1">
-              © {new Date().getFullYear()} {personal.name}. Made with
-              <Heart size={14} className="text-red-500 fill-red-500" />
-              in Vietnam
-            </p>
-            <p className="text-navy-500 text-xs">
-              Built with Next.js, Tailwind CSS & Three.js
-            </p>
-          </div>
+          <Separator className="my-6 bg-white/10" />
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500">
+            Ho Chi Minh City, Vietnam
+          </p>
         </div>
       </footer>
-
-      {/* Back to Top Button */}
-      <AnimatePresence>
-        {showBackToTop && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-lg hover:shadow-xl flex items-center justify-center gold-glow"
-          >
-            <ChevronUp size={24} />
-          </motion.button>
-        )}
-      </AnimatePresence>
     </main>
   );
 }

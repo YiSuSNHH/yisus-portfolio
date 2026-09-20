@@ -1,117 +1,78 @@
 # Nguyễn Huy Hùng
 
-**Kỹ sư Phần mềm**
-
-📧 yisus.nhh.dev@gmail.com | 📱 0967 622 166 | 🐙 [GitHub](https://github.com/YiSuSNHH)
+**Kỹ sư Kỹ thuật (Technical Engineer)**<br>
+Thành phố Hồ Chí Minh, Việt Nam<br>
+Email: yisus.nhh.dev@gmail.com | Điện thoại: 0967 622 166<br>
+GitHub: [YiSuSNHH](https://github.com/YiSuSNHH) | LinkedIn: [yisus-nhh](https://www.linkedin.com/in/yisus-nhh)
 
 ---
 
 ## Giới thiệu
 
-Kỹ sư Phần mềm với hơn 3 năm kinh nghiệm chuyên về **công nghệ giáo dục** và **nền tảng tài chính**. Thiết kế và xây dựng hệ thống backend có khả năng mở rộng sử dụng PHP/Laravel và Java/Spring Boot với nền tảng vững chắc về Domain-Driven Design (DDD) và nguyên tắc kiến trúc sạch.
-
-Đam mê tạo ra mã nguồn có cấu trúc tốt, dễ bảo trì.
+Kỹ sư Kỹ thuật (Technical Engineer) với hơn 4 năm kinh nghiệm làm cầu nối giữa nhu cầu nghiệp vụ và giải pháp kỹ thuật trong lĩnh vực công nghệ giáo dục và quản lý tài chính. Có thế mạnh về thu thập, phân tích và tài liệu hóa yêu cầu từ stakeholders; chuyển đổi nhu cầu kinh doanh thành đặc tả chức năng (functional specs), đặc tả kỹ thuật (technical specs), user stories, use cases, process flows và data models; đồng thời thiết kế kiến trúc hệ thống và phát triển backend vững chắc với PHP/Laravel, Java/Spring Boot.
 
 ---
 
 ## Kỹ năng kỹ thuật
 
-### Ngôn ngữ
-- **PHP** (Chính) — Laravel, Lumen
-- **Java** — Spring Boot
-- **JavaScript/TypeScript** — Vue.js, React, Next.js, Nuxt.js
+**Yêu cầu & Đặc tả:** Requirement Analysis, Functional & Technical Specifications, User Stories, Use Cases, Process Flows, Data Modeling
 
-### Cơ sở dữ liệu
-- MySQL, PostgreSQL, MongoDB
+**Ngôn ngữ & Framework:** PHP, Laravel, Lumen, Java, Spring Boot, JavaScript, TypeScript, Vue.js, React, Next.js, Nuxt.js
 
-### Kiến trúc
-- Domain-Driven Design (DDD)
-- Hexagonal Architecture / Clean Architecture
-- Event-Driven Architecture
-- Modular Monolith
-- MVC
+**Cơ sở dữ liệu:** PostgreSQL, MySQL, MongoDB
 
-### Nguyên tắc
-- OOP, SOLID
-- EAV Model
+**Kiến trúc & Thiết kế:** Domain-Driven Design, Hexagonal Architecture, Clean Architecture, Modular Monolith, Event-Driven Architecture, EAV Model
 
-### Công cụ & Môi trường
-- Git (GitHub, GitLab), Jira
-- Neovim, PHPStorm, VSCode
-- Linux (Arch), Docker
+**Nguyên tắc kỹ thuật:** OOP, SOLID, Design Patterns, RESTful API, Authentication & Authorization
+
+**Bảo mật & Xác thực:** OAuth2, JWT, Spring Security, Method-level Authorization
+
+**Công cụ & Nền tảng:** Git, GitHub, GitLab, Docker, Linux, Jira, Maven, Neovim, PhpStorm, VS Code
 
 ---
 
 ## Kinh nghiệm làm việc
 
-### Kỹ sư Phần mềm — Onschool Edtech Group
-*11/2022 – Hiện tại*
+### Kỹ sư Kỹ thuật (Technical Engineer)
+**Onschool Edtech Group**<br>
+11/2022 – Hiện tại | Thành phố Hồ Chí Minh, Việt Nam
 
-**Student Life Cycle** — Java 21, Spring Boot · **Tech Lead**
-- Thiết kế kiến trúc DDD + Hexagonal multi-module Maven với domain layer thuần (entities, value objects, domain services)
-- Thiết kế phân tách infrastructure layer: platform/core, platform/infrastructure, application layer
-- Triển khai JWT authentication với Spring Security và custom PermissionEvaluator cho method-level authorization
-- Cấu hình Flyway migrations và SpringDoc OpenAPI cho API documentation
+**Hệ thống trọng tâm:** SLC (Student Life Cycle) | SRM System (Student Management) | Moodle Integration
 
-**SRM System** — Lumen, Swoole · **Tech Lead** *(giai đoạn sau)*
-- Xây dựng hệ thống quản lý quan hệ sinh viên: form đăng ký contact → thu thập thông tin cho kế toán/sales → bàn giao giáo vụ quản lý hồ sơ → điều hành học tập
-- Phát triển backend async hiệu năng cao với Lumen + Swoole
-- Thiết kế kiến trúc Modular Monolith với composer-merge-plugin
-- Tạo platform core layer: Entity base class, Repository pattern, Hydrator, EventDispatcher
-- Triển khai Actions pattern (Use Cases) với DTOs và self-hydration cho entity mapping
-- Tích hợp Firebase push notifications và QR Bank payment APIs
+**Đóng góp chính:**
 
-**Student Management System** — Laravel
-- Phát triển kiến trúc modular cho quản lý lớp học, xử lý tài chính và báo cáo
-
-**Moodle Integration**
-- Reverse-engineered cơ chế autoload của Moodle (Frankenstyle naming convention)
-- Phát triển local plugin với external functions và web service APIs
-
-**Tech Stack:** Java/Spring Boot, Laravel, Lumen, Swoole, Nuxt.js, Next.js, MySQL, PostgreSQL, Firebase, Moodle
+- Thu thập, phân tích và tài liệu hóa các yêu cầu kỹ thuật và nghiệp vụ từ stakeholders trong lĩnh vực công nghệ giáo dục.
+- Chuyển đổi nhu cầu kinh doanh thành các đặc tả chức năng (functional specifications) và đặc tả kỹ thuật (technical specifications) rõ ràng, chi tiết.
+- Xây dựng user stories, use cases, luồng quy trình (process flows) và mô hình dữ liệu (data models).
+- Đảm bảo các yêu cầu hoàn chỉnh, có tính khả thi kỹ thuật và gắn kết chặt chẽ với mục tiêu kinh doanh.
+- Dẫn dắt thiết kế kỹ thuật và kiến trúc backend cho hệ thống student lifecycle và student management theo Domain-Driven Design (DDD), Hexagonal Architecture và Clean Architecture.
+- Triển khai mô hình Backend-for-Frontend (BFF) với OAuth2 cho tích hợp bên thứ ba và JWT cho dịch vụ nội bộ.
+- Xây dựng cơ chế phân quyền chi tiết bằng Spring Security và custom `PermissionEvaluator` cho method-level access control.
+- Thiết kế và vận hành quy trình blue-green deployment cho production nhằm đảm bảo zero-downtime và khả năng rollback an toàn.
+- Cải thiện hiệu năng backend và khả năng quan sát hệ thống bằng tối ưu truy cập dữ liệu, hạn chế N+1 query và bổ sung structured logging/tracing.
+- Reverse-engineer cơ chế autoload Frankenstyle của Moodle và phát triển local plugin với external functions cùng web service APIs.
+- Phối hợp với stakeholder trong quá trình làm rõ yêu cầu, đào tạo người dùng và hỗ trợ điều phối đội ngũ trong giai đoạn triển khai.
 
 ---
 
-### Kỹ sư Phần mềm Freelance
-*2021 – Hiện tại*
+### Kỹ sư Kỹ thuật (Technical Engineer)
+**Freelance**<br>
+2022 – Hiện tại | Remote
 
-**Nền tảng Quản lý Tài chính**
-- Xây dựng giải pháp phần mềm tài chính hoàn chỉnh với xử lý tài liệu và quản lý đơn hàng
-- Tích hợp các workflow nghiệp vụ phức tạp cho hoạt động tài chính
+**Financial Management Platform** — Laravel, React, MongoDB
 
-**Skeleton Platform** (Low-Code Platform)
-- Thiết kế kiến trúc low-code platform sử dụng mô hình **Entity-Attribute-Value (EAV)**
-- Triển khai **Domain-Driven Design** patterns với PHP core tuân thủ PSR
-- Xây dựng kiến trúc event-driven với NATS Server làm message broker cho real-time notifications
-- Triển khai lazy loading để tối ưu hiệu suất hình ảnh
+**Đóng góp chính:**
 
-**Tech Stack:** Laravel, Inertia.js, React, MongoDB, PostgreSQL, NATS Server
+- Phân tích yêu cầu nghiệp vụ của khách hàng và thiết kế các thực thể tài chính linh hoạt bằng mô hình Entity-Attribute-Value (EAV).
+- Xây dựng nền tảng quản lý tài chính trên Laravel theo hướng mô-đun với PHP core tuân thủ PSR để tái sử dụng business logic.
+- Triển khai workflow event-driven với NATS cho xử lý bất đồng bộ và thông báo tài chính theo thời gian thực.
+- Cải thiện trải nghiệm tải frontend bằng lazy loading và tối ưu client-side rendering.
 
 ---
 
 ## Học vấn
 
-### Đại học Mở Hà Nội (HOU)
-**Kỹ sư** — Công nghệ Phần mềm
-*2019 – 2024*
+### Đại học Mở Hà Nội
 
----
-
-## Kỹ năng mềm
-
-- 💬 Giao tiếp rõ ràng
-- 👥 Làm việc nhóm
-- 🧩 Giải quyết vấn đề
-- ⏰ Quản lý thời gian
-- 🎯 Lãnh đạo
-- 💡 Tư duy sáng tạo
-
----
-
-## Tôi đang tìm kiếm
-
-Tôi đang tìm cơ hội tham gia các đội nhóm có quy trình rõ ràng, nơi tôi có thể:
-- Học hỏi từ các kỹ sư senior và nâng cao chiều sâu kỹ thuật
-- Áp dụng và trau dồi kiến thức về DDD và clean architecture trong hệ thống production
-- Đóng góp vào codebase có cấu trúc tốt với code reviews và tiêu chuẩn kỹ thuật
-- Phát triển như một backend engineer trong môi trường cộng tác
+**Kỹ sư — Công nghệ Phần mềm**<br>
+2019 – 2024

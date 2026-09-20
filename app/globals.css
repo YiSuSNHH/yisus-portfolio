@@ -1,74 +1,101 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #FFFEF5;
-  --foreground: #102A43;
-}
+@layer base {
+  :root {
+    --background: 48 33% 97%;
+    --foreground: 220 18% 14%;
+    --card: 48 25% 99%;
+    --card-foreground: 220 18% 14%;
+    --popover: 48 25% 99%;
+    --popover-foreground: 220 18% 14%;
+    --primary: 39 68% 42%;
+    --primary-foreground: 48 33% 97%;
+    --secondary: 220 13% 94%;
+    --secondary-foreground: 220 16% 19%;
+    --muted: 46 17% 94%;
+    --muted-foreground: 220 11% 42%;
+    --accent: 42 45% 90%;
+    --accent-foreground: 38 57% 27%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 48 33% 97%;
+    --border: 220 12% 86%;
+    --input: 220 12% 82%;
+    --ring: 39 68% 42%;
+    --chart-1: 39 68% 42%;
+    --chart-2: 205 43% 43%;
+    --chart-3: 220 18% 30%;
+    --chart-4: 108 36% 51%;
+    --chart-5: 18 47% 48%;
+    --radius: 0.75rem;
+    --sidebar: 46 18% 95%;
+    --sidebar-foreground: 220 18% 14%;
+    --sidebar-primary: 39 68% 42%;
+    --sidebar-primary-foreground: 48 33% 97%;
+    --sidebar-accent: 42 45% 90%;
+    --sidebar-accent-foreground: 38 57% 27%;
+    --sidebar-border: 220 12% 86%;
+    --sidebar-ring: 39 68% 42%;
+  }
 
-.dark {
-  --background: #102A43;
-  --foreground: #F0F4F8;
-}
+  .dark {
+    --background: 220 18% 12%;
+    --foreground: 46 17% 93%;
+    --card: 220 18% 15%;
+    --card-foreground: 46 17% 93%;
+    --popover: 220 18% 15%;
+    --popover-foreground: 46 17% 93%;
+    --primary: 40 62% 58%;
+    --primary-foreground: 220 20% 13%;
+    --secondary: 220 16% 20%;
+    --secondary-foreground: 46 17% 91%;
+    --muted: 220 15% 19%;
+    --muted-foreground: 220 10% 68%;
+    --accent: 39 32% 22%;
+    --accent-foreground: 40 62% 72%;
+    --destructive: 0 67% 59%;
+    --destructive-foreground: 46 17% 93%;
+    --border: 220 13% 26%;
+    --input: 220 13% 31%;
+    --ring: 40 62% 58%;
+    --sidebar: 220 18% 14%;
+    --sidebar-foreground: 46 17% 93%;
+    --sidebar-primary: 40 62% 58%;
+    --sidebar-primary-foreground: 220 20% 13%;
+    --sidebar-accent: 39 32% 22%;
+    --sidebar-accent-foreground: 40 62% 72%;
+    --sidebar-border: 220 13% 26%;
+    --sidebar-ring: 40 62% 58%;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+  * {
+    @apply border-border outline-ring/50;
+  }
 
-/* Gold shimmer gradient */
-.gold-shimmer {
-  background: linear-gradient(
-    90deg,
-    #D4AF37 0%,
-    #FFE599 25%,
-    #D4AF37 50%,
-    #FFE599 75%,
-    #D4AF37 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Metallic text effect */
-.metallic-text {
-  background: linear-gradient(
-    180deg,
-    #D4AF37 0%,
-    #F0E68C 40%,
-    #D4AF37 60%,
-    #B8860B 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Glow effect */
-.gold-glow {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3),
-              0 0 40px rgba(212, 175, 55, 0.2),
-              0 0 60px rgba(212, 175, 55, 0.1);
-}
-
-/* Print styles */
-@media print {
-  /* Hide browser default headers and footers */
-  @page {
-    margin: 0.5in;
-    size: A4;
+  html {
+    @apply bg-background font-sans text-foreground;
   }
 
   body {
+    @apply bg-background text-foreground;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0.5in;
+    size: a4;
+  }
+
+  body {
+    color: #111;
+    background: #fff;
     font-size: 11pt;
     line-height: 1.4;
-    color: #000;
-    background: #fff;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -77,54 +104,30 @@ body {
     display: none !important;
   }
 
-  .print-only {
-    display: block !important;
-  }
-
   a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
 
   h1,
   h2,
-  h3 {
-    page-break-after: avoid;
-  }
-
+  h3,
   section {
     page-break-inside: avoid;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-}
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #B8860B;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #FFD966;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

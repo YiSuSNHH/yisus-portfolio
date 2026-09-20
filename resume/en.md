@@ -1,116 +1,77 @@
 # Nguyen Huy Hung
 
-**Software Engineer**
-
-📧 yisus.nhh.dev@gmail.com | 📱 0967 622 166 | 🐙 [GitHub](https://github.com/YiSuSNHH)
+**Technical Engineer**<br>
+Ho Chi Minh City, Vietnam<br>
+Email: yisus.nhh.dev@gmail.com | Phone: 0967 622 166<br>
+GitHub: [YiSuSNHH](https://github.com/YiSuSNHH) | LinkedIn: [yisus-nhh](https://www.linkedin.com/in/yisus-nhh)
 
 ---
 
 ## About Me
 
-Software Engineer with 3+ years of experience specializing in **educational technology** and **financial platforms**. I design and build scalable backend systems using PHP/Laravel and Java/Spring Boot with a strong foundation in Domain-Driven Design (DDD) and clean architecture principles.
-
-Passionate about creating well-structured, maintainable code.
+Technical Engineer with 4+ years of experience bridging business vision and engineering execution across educational technology and financial management platforms. Expert in gathering and analyzing stakeholder requirements, drafting functional & technical specifications, user stories, use cases, process flows, and data models while designing resilient backend architectures with PHP/Laravel and Java/Spring Boot.
 
 ---
 
 ## Technical Skills
 
-### Languages
-- **PHP** (Primary) — Laravel, Lumen
-- **Java** — Spring Boot
-- **JavaScript/TypeScript** — Vue.js, React, Next.js, Nuxt.js
+**Requirements & Specifications:** Requirement Analysis, Functional & Technical Specifications, User Stories, Use Cases, Process Flows, Data Modeling
 
-### Databases
-- MySQL, PostgreSQL, MongoDB
+**Languages & Frameworks:** PHP, Laravel, Lumen, Java, Spring Boot, JavaScript, TypeScript, Vue.js, React, Next.js, Nuxt.js
 
-### Architecture
-- Domain-Driven Design (DDD)
-- Hexagonal Architecture / Clean Architecture
-- Event-Driven Architecture
-- Modular Monolith
-- MVC
+**Databases:** PostgreSQL, MySQL, MongoDB
 
-### Principles
-- OOP, SOLID
-- EAV Model
+**Architecture & Design:** Domain-Driven Design, Hexagonal Architecture, Clean Architecture, Modular Monolith, Event-Driven Architecture, EAV Model
 
-### Tools & Environment
-- Git (GitHub, GitLab), Jira
-- Neovim, PHPStorm, VSCode
-- Linux (Arch), Docker
+**Engineering Principles:** OOP, SOLID, Design Patterns, RESTful API, Authentication & Authorization
+
+**Security & Auth:** OAuth2, JWT, Spring Security, Method-level Authorization
+
+**Tools & Platforms:** Git, GitHub, GitLab, Docker, Linux, Jira, Maven, Neovim, PhpStorm, VS Code
 
 ---
 
 ## Professional Experience
 
-### Software Engineer — Onschool Edtech Group
-*2022 – Present*
+### Technical Engineer
+**Onschool Edtech Group**<br>
+11/2022 – Present | Ho Chi Minh City, Vietnam
 
-**Student Life Cycle** — Java 21, Spring Boot
-- Architected DDD + Hexagonal multi-module Maven project with pure domain layer (entities, value objects, domain services)
-- Designed infrastructure layer separation: platform/core, platform/infrastructure, application layer
-- Implemented JWT authentication with Spring Security and custom PermissionEvaluator for method-level authorization
-- Configured Flyway migrations and SpringDoc OpenAPI for API documentation
+**Core Systems:** SLC (Student Life Cycle) | SRM System (Student Management) | Moodle Integration
 
-**SRM System** — Lumen, Swoole
-- Built high-performance async backend with Lumen + Swoole
-- Designed Modular Monolith architecture with composer-merge-plugin
-- Created platform core layer: Entity base class, Repository pattern, Hydrator, EventDispatcher
-- Implemented Actions pattern (Use Cases) with DTOs and self-hydration for entity mapping
-- Integrated Firebase push notifications and QR Bank payment APIs
+**Key Contributions:**
 
-**Student Management System** — Laravel
-- Developed modular architecture for class management, financial processing, and reporting
-
-**Moodle Integration**
-- Reverse-engineered Moodle autoload mechanism (Frankenstyle naming convention)
-- Developed local plugin with external functions and web service APIs
-
-**Tech Stack:** Java/Spring Boot, Laravel, Lumen, Swoole, Nuxt.js, Next.js, MySQL, PostgreSQL, Firebase, Moodle
+- Gathered, analyzed, and documented business and technical requirements from stakeholders across educational technology workflows.
+- Translated business needs into clear functional and technical specifications, user stories, use cases, process flows, and data models.
+- Ensured requirements were complete, feasible, and strictly aligned with business objectives.
+- Led technical design and backend architecture for student lifecycle and student management platforms using Domain-Driven Design (DDD), Hexagonal Architecture, and Clean Architecture.
+- Implemented Backend-for-Frontend (BFF) authentication patterns with OAuth2 for third-party integrations and JWT-based authentication for internal services.
+- Built fine-grained authorization using Spring Security and a custom `PermissionEvaluator` for method-level access control across APIs.
+- Designed and operated a blue-green deployment process for production releases, enabling zero-downtime deployment and faster rollback.
+- Improved backend performance and observability by optimizing database access, preventing N+1 queries, and adding structured logging/tracing.
+- Reverse-engineered Moodle's Frankenstyle autoloading mechanism and developed local plugins with external functions and web service APIs.
+- Collaborated with stakeholders, delivered user training sessions, and supported cross-functional team coordination during implementation phases.
 
 ---
 
-### Freelance Software Engineer
-*2021 – Present*
+### Technical Engineer
+**Freelance**<br>
+2022 – Present | Remote
 
-**Financial Management Platform**
-- Built a complete financial software solution with document processing and order management
-- Integrated complex business workflows for financial operations
+**Financial Management Platform** — Laravel, React, MongoDB
 
-**Skeleton Platform** (Low-Code Platform)
-- Architected a low-code platform using **Entity-Attribute-Value (EAV)** model
-- Implemented **Domain-Driven Design** patterns with PSR-compliant PHP core
-- Built event-driven architecture with NATS Server as message broker for real-time notifications
-- Implemented lazy loading for optimized image performance
+**Key Contributions:**
 
-**Tech Stack:** Laravel, Inertia.js, React, MongoDB, PostgreSQL, NATS Server
+- Analyzed client business requirements and designed flexible financial entities using an Entity-Attribute-Value (EAV) model to support dynamic business attributes.
+- Built a modular Laravel-based financial management platform with a PSR-compliant PHP core to keep business logic reusable across modules.
+- Implemented event-driven workflows with NATS for asynchronous processing and real-time finance-related notifications.
+- Improved frontend loading experience by implementing lazy loading and optimizing client-side rendering.
 
 ---
 
 ## Education
 
-### Hanoi Open University (HOU)
-**Bachelor of Engineering** — Software Technology
-*2019 – 2024*
+### Hanoi Open University
 
----
-
-## Soft Skills
-
-- 🗣️ Clear Communication
-- 👥 Team Collaboration
-- 🧩 Problem Solving
-- ⏰ Time Management
-- 🎯 Leadership
-- 💡 Creative Thinking
-
----
-
-## What I'm Looking For
-
-I'm seeking opportunities to join established teams with clear processes where I can:
-- Learn from senior engineers and improve my technical depth
-- Apply and refine my knowledge of DDD and clean architecture in production systems
-- Contribute to well-structured codebases with code reviews and engineering standards
-- Grow as a backend engineer in a collaborative environment
+**Bachelor of Engineering — Software Technology**<br>
+2019 – 2024

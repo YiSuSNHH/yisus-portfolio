@@ -1,30 +1,26 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'YiSuS Portfolio - Nguyen Huy Hung',
-    short_name: 'YiSuS',
-    description: 'Software Engineer specializing in educational technology and financial platforms. Expert in DDD, Clean Architecture, and modern backend development.',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#FFFEF5',
-    theme_color: '#D4AF37',
+    name: "Nguyen Huy Hung - Technical Engineer",
+    short_name: "Nguyen Huy Hung",
+    description:
+      "Technical Engineer translating business requirements into domain models, specs, and scalable systems.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#f8f7f3",
+    theme_color: "#1d222b",
     icons: [
       {
-        src: '/favicon.ico',
-        sizes: 'any',
-        type: 'image/x-icon',
+        src: "/icon.svg",
+        type: "image/svg+xml",
+        sizes: "any",
       },
       {
-        src: '/icon.svg',
-        type: 'image/svg+xml',
-        sizes: 'any',
-      },
-      {
-        src: '/apple-icon?<generated>',
-        type: 'image/png',
-        sizes: '180x180',
+        src: "/apple-icon?<generated>",
+        type: "image/png",
+        sizes: "180x180",
       },
     ],
-  }
+  };
 }
