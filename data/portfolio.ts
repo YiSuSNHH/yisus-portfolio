@@ -12,29 +12,26 @@ export const portfolioData = {
 
   about: {
     summary:
-      "Software Engineer with 4+ years of hands-on experience designing, refactoring, and optimizing large-scale systems across EdTech and Finance. Specialized in Java 21 / Spring Boot and PHP / Laravel, with architectural expertise in Domain-Driven Design (DDD), Modular Monolith, Clean / Hexagonal Architecture, and Event-Driven Architecture. Proven track record in solving complex performance bottlenecks (asynchronous batch downloads, N+1 query elimination, O(1) API algorithm optimizations, on-demand image resizing, multi-instance DB migration strategies) and implementing fine-grained security & authorization mechanisms (OAuth2, JWT, Spring Security).",
+      "Software Engineer with 4+ years of hands-on experience designing, refactoring, and optimizing large-scale systems across EdTech and Finance. Specialized in Java 21 / Spring Boot, PHP / Laravel, Python / Airflow, and Bun / Hono 4. Proven track record in building automated data pipelines (Apache Airflow, PostgreSQL 16 OAA/APM DBs), solving complex performance bottlenecks (asynchronous batch downloads, N+1 query elimination, O(1) API algorithm optimizations, on-demand image resizing), and delivering OpenAPI 3 compliant microservices.",
     focus:
-      "I engineer resilient backend systems, solve complex database performance bottlenecks, and design maintainable software architectures (DDD, Clean Architecture, BFF).",
+      "I engineer resilient backend systems, build automated data pipelines (Python/Airflow), optimize PostgreSQL 16 databases, and develop high-performance APIs (Bun/Hono 4, Spring Boot).",
     availability: "Open to Software Engineer and Technical Lead roles.",
   },
 
   metrics: [
     { value: "4+ years", label: "Software Engineering" },
-    { value: "Java 21 & Spring Boot", label: "Core Tech Stack" },
-    { value: "EdTech & Finance", label: "High-scale Systems" },
+    { value: "Java 21, PHP, Python, Bun", label: "Core Stack" },
+    { value: "PostgreSQL 16 & Airflow", label: "Data & Systems" },
   ],
 
   skills: {
     languages: [
       { name: "Java (Java 21)", level: "Strong", frameworks: ["Spring Boot", "Spring Security", "Spring Data JPA"] },
       { name: "PHP", level: "Strong", frameworks: ["Laravel", "Lumen"] },
-      {
-        name: "JavaScript / TypeScript",
-        level: "Working",
-        frameworks: ["Next.js", "React", "Vue.js", "Nuxt.js"],
-      },
+      { name: "TypeScript / JavaScript", level: "Strong", frameworks: ["Bun 1.3+", "Hono 4 (REST + OpenAPI 3)", "Next.js", "React", "Nuxt.js"] },
+      { name: "Python", level: "Working", frameworks: ["Apache Airflow"] },
     ],
-    databases: ["PostgreSQL", "MySQL", "MongoDB"],
+    databases: ["PostgreSQL 16 (OAA & APM DBs)", "MySQL", "MongoDB"],
     architecture: [
       "Domain-Driven Design (DDD)",
       "Modular Monolith",
@@ -42,9 +39,10 @@ export const portfolioData = {
       "Clean Architecture",
       "Backend-for-Frontend (BFF)",
       "Event-Driven Architecture (NATS)",
-      "RESTful API Design",
+      "RESTful API & OpenAPI 3 Specification",
     ],
     engineering: [
+      "Apache Airflow DAGs & Data Pipelines",
       "SQL Query Optimization & Indexing",
       "N+1 Query Elimination",
       "Asynchronous Batch Download",
@@ -60,11 +58,12 @@ export const portfolioData = {
       "Method-level Authorization (Custom PermissionEvaluator)",
     ],
     tools: [
+      "Docker & Docker Compose",
+      "Nginx",
       "Git (Multi-instance repo branching)",
       "GitHub",
       "GitLab",
       "Blue-Green Deployment (Zero-downtime)",
-      "Docker",
       "Linux",
       "Maven",
       "Jira",
@@ -79,7 +78,7 @@ export const portfolioData = {
       name: "APM (Academic Process Management)",
       context: "Onschool Edtech Group",
       role: "Software Engineer / Tech Lead",
-      tech: "Java 21, Spring Boot, Next.js, PostgreSQL",
+      tech: "Java 21, Spring Boot, Next.js, PostgreSQL 16 (APM DB)",
       summary:
         "Engineered backend architecture following DDD, Hexagonal Architecture, and BFF. Implemented OAuth2/JWT security, method-level Spring Security authorization, and Production Blue-Green deployment.",
       highlights: [
@@ -92,7 +91,7 @@ export const portfolioData = {
       name: "SRM Ecosystem (SRMA, SRM1, SV50)",
       context: "Onschool Edtech Group",
       role: "Software Engineer / Tech Lead (later phase)",
-      tech: "PHP (Laravel, Lumen), PostgreSQL, MySQL, React, Nuxt.js, Git",
+      tech: "PHP (Laravel, Lumen), PostgreSQL 16, MySQL, React, Nuxt.js, Git",
       summary:
         "Engineered student records, gradebooks, receivables/payables, auto bank statement matching, async batch downloads, N+1 query fixes, and inter-department data handoff workflows between SRMA, SV50, and SRM1.",
       highlights: [
@@ -100,6 +99,20 @@ export const portfolioData = {
         "Engineered asynchronous batch download system for massive reports without RAM bloat.",
         "Eliminated N+1 queries across multi-instance isolated university databases.",
         "Designed inter-system data handoff tools and operational workflows between support departments and SRMA/SV50/SRM1 systems.",
+      ],
+    },
+    {
+      name: "Data Pipeline & Data Controlling System",
+      context: "Onschool Edtech Group",
+      role: "Software Engineer / Delivery Manager",
+      tech: "Python, Apache Airflow, PostgreSQL 16 (OAA & APM DBs), Bun 1.3+, Hono 4 (REST + OpenAPI 3), Docker Compose, Nginx",
+      summary:
+        "Designed automated data pipeline workflows using Python & Apache Airflow between OAA and APM databases. Built lightweight REST APIs with Bun 1.3+ & Hono 4 (OpenAPI 3) deployed with Docker Compose and Nginx.",
+      highlights: [
+        "Built Python & Apache Airflow DAGs for automated cross-system data sync between OAA DB and APM DB.",
+        "Engineered automated daily auditing & alert triggers for pipeline monitoring and data integrity.",
+        "Developed high-performance REST APIs compliant with OpenAPI 3 specification using Bun 1.3+ and Hono 4.",
+        "Configured containerized deployment pipeline using Docker Compose and Nginx reverse proxy.",
       ],
     },
     {
@@ -118,7 +131,7 @@ export const portfolioData = {
       name: "Financial Management Platform",
       context: "Freelance",
       role: "Software Engineer",
-      tech: "Laravel, React, MongoDB, NATS",
+      tech: "Laravel, React, MongoDB, NATS, Docker Compose, Nginx",
       summary:
         "Designed flexible financial data models using EAV structure, built Event-Driven Architecture with NATS, and implemented On-demand Image Resizing for fast frontend loading.",
       highlights: [
@@ -136,24 +149,25 @@ export const portfolioData = {
       period: "11/2022 - Present",
       location: "Ho Chi Minh City, Vietnam",
       summary:
-        "Designed, refactored, and optimized mission-critical systems in educational technology. Served as Software Engineer / Tech Lead for APM and SRM (SRMA, SRM1, SV50) platforms.",
+        "Designed, refactored, and optimized mission-critical systems in educational technology. Served as Software Engineer / Tech Lead for APM, SRM, and Data Pipeline platforms.",
       achievements: [
         "Designed and developed backend architecture for academic process management (APM) using Domain-Driven Design (DDD), Hexagonal Architecture, and Backend-for-Frontend (BFF).",
+        "Engineered automated Data Pipeline & Data Controlling workflows using Python and Apache Airflow between PostgreSQL 16 OAA DB and APM DB.",
+        "Developed lightweight, high-performance REST microservices using Bun 1.3+ and Hono 4 framework adhering to OpenAPI 3 specifications.",
+        "Deployed and managed containerized services using Docker Compose and Nginx reverse proxy.",
         "Engineered secure authentication & authorization infrastructure (OAuth2, JWT, Spring Security method-level custom PermissionEvaluator).",
         "Designed and operated Blue-Green deployment pipeline on Production, guaranteeing zero-downtime releases and safe rollback.",
         "Engineered core modules across the SRM ecosystem (SRMA, SRM1, SV50) including student records, gradebooks, receivables/payables, and automated bank statement matching.",
         "Architected an asynchronous batch download system to export large-scale financial reports without main thread blocking or RAM exhaustion.",
-        "Refactored legacy codebases across SRM1 & SV50 systems, eliminating N+1 queries and optimizing SQL pagination.",
-        "Formulated multi-university DB migration strategy and Git repo branching model to standardize heterogeneous schemas into a unified structure.",
+        "Refactored legacy codebases across SRM1 & SV50 systems, eliminating N+1 queries and optimizing SQL pagination on PostgreSQL 16.",
         "Designed and proposed inter-system data handoff tools and operational workflows between support departments and SRMA, SV50, and SRM1 systems.",
         "Optimized Moodle LMS integration APIs by refactoring nested O(N^2) loops into O(1) HashMap lookup tables.",
-        "Designed data pipeline synchronization and automated daily auditing triggers across heterogeneous system databases.",
       ],
       projects: [
         {
           name: "APM (Academic Process Management)",
           role: "Software Engineer / Tech Lead",
-          tech: "Java 21, Spring Boot, Next.js, PostgreSQL",
+          tech: "Java 21, Spring Boot, Next.js, PostgreSQL 16",
           highlights: [
             "Designed multi-module Spring Boot backend using Domain-Driven Design, Hexagonal Architecture, and Clean Architecture.",
             "Implemented BFF pattern with OAuth2 (3rd party), JWT (internal), and custom PermissionEvaluator.",
@@ -161,9 +175,19 @@ export const portfolioData = {
           ],
         },
         {
+          name: "Data Pipeline & Data Controlling System",
+          role: "Software Engineer / Delivery Manager",
+          tech: "Python, Apache Airflow, PostgreSQL 16 (OAA & APM DBs), Bun 1.3+, Hono 4 (OpenAPI 3), Docker Compose, Nginx",
+          highlights: [
+            "Built Python & Apache Airflow DAGs for automated data sync and daily auditing between OAA DB and APM DB.",
+            "Developed Bun 1.3+ & Hono 4 REST APIs with OpenAPI 3 specs for high-speed integrations.",
+            "Deployed microservices infrastructure with Docker Compose and Nginx reverse proxy.",
+          ],
+        },
+        {
           name: "SRM Ecosystem (SRMA, SRM1, SV50)",
           role: "Software Engineer / Tech Lead (later phase)",
-          tech: "PHP (Laravel, Lumen), PostgreSQL, MySQL, React, Nuxt.js, Git",
+          tech: "PHP (Laravel, Lumen), PostgreSQL 16, MySQL, React, Nuxt.js, Git",
           highlights: [
             "Built core modules: student records, gradebooks, receivables/payables, and automated bank statement matching.",
             "Architected asynchronous batch download solution to export massive financial reports without RAM crashes.",
@@ -180,30 +204,20 @@ export const portfolioData = {
             "Optimized API algorithm from nested O(N^2) loops to O(1) HashMap lookup tables.",
           ],
         },
-        {
-          name: "Data Pipeline & Data Controlling System",
-          role: "Software Engineer / Delivery Manager",
-          tech: "Java, PHP, PostgreSQL, REST API",
-          highlights: [
-            "Designed data transformation and sync logic between heterogeneous databases.",
-            "Built automated auditing (daily/auto auditing) to monitor pipeline health and trigger alerts.",
-          ],
-        },
       ],
       techStack: [
         "Java 21",
         "Spring Boot",
-        "Spring Security",
+        "Python",
+        "Apache Airflow",
+        "Bun 1.3+",
+        "Hono 4",
+        "OpenAPI 3",
         "PHP",
         "Laravel",
-        "Lumen",
-        "PostgreSQL",
-        "MySQL",
-        "React",
-        "Next.js",
-        "Nuxt.js",
-        "Moodle Core",
-        "Docker",
+        "PostgreSQL 16",
+        "Docker Compose",
+        "Nginx",
         "Git",
       ],
     },
@@ -224,7 +238,7 @@ export const portfolioData = {
         {
           name: "Financial Management Platform",
           role: "Software Engineer",
-          tech: "Laravel, React, MongoDB, NATS",
+          tech: "Laravel, React, MongoDB, NATS, Docker Compose, Nginx",
           highlights: [
             "Designed flexible financial entity storage using Entity-Attribute-Value (EAV) model.",
             "Implemented Event-Driven Architecture with NATS for async financial processing and alerts.",
@@ -239,6 +253,8 @@ export const portfolioData = {
         "MongoDB",
         "PostgreSQL",
         "NATS",
+        "Docker Compose",
+        "Nginx",
       ],
     },
   ],
@@ -252,8 +268,8 @@ export const portfolioData = {
 
   lookingFor: [
     "Software Engineer or Technical Lead roles in high-performance engineering teams.",
-    "Products requiring strong domain modeling (DDD), high query optimization, and clean architecture.",
-    "Teams building scalable distributed backend systems using Java / Spring Boot or PHP / Laravel.",
+    "Products requiring strong domain modeling (DDD), data pipeline automation (Python/Airflow), and clean architecture.",
+    "Teams building scalable backend systems using Java / Spring Boot, Bun / Hono 4, or PHP / Laravel.",
   ],
 };
 
