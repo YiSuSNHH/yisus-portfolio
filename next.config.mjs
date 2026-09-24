@@ -2,14 +2,6 @@
 const nextConfig = {
   experimental: {
     optimizePackageImports: ["framer-motion", "lucide-react", "radix-ui"],
-    turbo: {
-      rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
-        },
-      },
-    },
   },
 
   compiler: {

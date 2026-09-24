@@ -13,7 +13,7 @@ const infrastructureImage =
   "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85";
 
 export function Hero() {
-  const { personal } = portfolioData;
+  const { personal, about } = portfolioData;
   const reduceMotion = useReducedMotion();
 
   return (
@@ -27,13 +27,13 @@ export function Hero() {
             className="max-w-3xl"
           >
             <Badge variant="outline" className="rounded-md border-primary/35 bg-accent/60 font-mono text-[11px] uppercase tracking-[0.14em] text-accent-foreground">
-              Technical Engineer
+              {personal.title}
             </Badge>
-            <h1 className="mt-6 max-w-[13ch] text-5xl font-semibold tracking-[-0.07em] text-foreground sm:text-6xl lg:text-7xl">
-              Bridging business goals with engineering execution.
+            <h1 className="mt-6 max-w-[14ch] text-5xl font-semibold tracking-[-0.07em] text-foreground sm:text-6xl lg:text-7xl">
+              Engineering resilient backends &amp; high-performance data systems.
             </h1>
             <p className="mt-6 max-w-[58ch] text-base leading-7 text-muted-foreground md:text-lg">
-              Technical Engineer specializing in requirement specifications, domain modeling, process flows, and system architecture across edtech and financial platforms.
+              {about.focus} Specialized in <strong className="font-semibold text-foreground">Java 21 / Spring Boot</strong> and <strong className="font-semibold text-foreground">PHP / Laravel</strong>, Domain-Driven Design (DDD), N+1 query elimination, and high-scale architecture.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-11 rounded-md px-5">
@@ -43,7 +43,7 @@ export function Hero() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="h-11 rounded-md px-5">
-                <a href="#contact">Contact</a>
+                <a href="#contact">Contact me</a>
               </Button>
             </div>
           </motion.div>
@@ -55,8 +55,8 @@ export function Hero() {
             className="relative overflow-hidden rounded-xl border bg-card"
           >
             <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between border-b border-white/10 bg-zinc-950/55 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-300 backdrop-blur-sm">
-              <span>Infrastructure</span>
-              <span>Production systems</span>
+              <span>Backend Infrastructure</span>
+              <span>Production Systems</span>
             </div>
             <Image
               src={infrastructureImage}
@@ -74,10 +74,10 @@ export function Hero() {
         <div className="mx-auto grid max-w-7xl gap-5 py-6 md:grid-cols-[1fr_auto_auto_auto] md:items-center">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
-              Nguyen Huy Hung
+              {personal.name}
             </p>
             <p className="mt-1 text-sm text-foreground">
-              Ho Chi Minh City, Vietnam
+              {personal.location}
             </p>
           </div>
           <Separator orientation="vertical" className="hidden h-9 md:block" />

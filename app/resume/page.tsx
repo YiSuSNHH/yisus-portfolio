@@ -23,7 +23,7 @@ export default function ResumePage() {
           <div className="flex items-center gap-2">
             <Button asChild variant="outline" size="sm" className="hidden sm:inline-flex">
               <Link href="/resume/harvard">
-                Harvard B&W Style
+                Harvard B&amp;W Style
               </Link>
             </Button>
             <ThemeToggle />
@@ -35,11 +35,11 @@ export default function ResumePage() {
         </div>
       </header>
 
-      <main className="min-h-[100dvh] bg-muted px-4 pb-10 pt-24 md:px-6 print:bg-white print:px-0 print:pt-0">
-        <article className="mx-auto max-w-5xl space-y-4 rounded-xl border bg-background p-6 shadow-sm md:p-9 print:max-w-none print:rounded-none print:border-0 print:p-0 print:shadow-none">
+      <main className="min-h-[100dvh] bg-zinc-100 dark:bg-zinc-950 px-4 pb-12 pt-24 md:px-6 print:bg-white print:px-0 print:pt-0">
+        <article className="mx-auto max-w-5xl space-y-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm md:p-10 print:max-w-none print:rounded-none print:border-0 print:p-0 print:shadow-none">
           <section>
-            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
-              Technical Engineer
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              {personal.title}
             </p>
             <div className="mt-4 grid gap-6 md:grid-cols-[1fr_auto]">
               <div>
@@ -63,11 +63,11 @@ export default function ResumePage() {
                   <MapPin size={14} />
                   {personal.location}
                 </span>
-                <a className="flex items-center gap-2 transition hover:text-foreground" href={personal.github}>
+                <a className="flex items-center gap-2 transition hover:text-foreground" href={personal.github} target="_blank" rel="noopener noreferrer">
                   <Github size={14} />
                   GitHub
                 </a>
-                <a className="flex items-center gap-2 transition hover:text-foreground" href={personal.linkedin}>
+                <a className="flex items-center gap-2 transition hover:text-foreground" href={personal.linkedin} target="_blank" rel="noopener noreferrer">
                   <Linkedin size={14} />
                   LinkedIn
                 </a>
@@ -82,12 +82,11 @@ export default function ResumePage() {
               Technical skills
             </h2>
             <div className="mt-4 grid gap-x-8 gap-y-4 md:grid-cols-2">
-              <SkillGroup title="Languages & frameworks" value={skills.languages.map((item) => `${item.name}: ${item.frameworks.join(", ")}`).join("; ")} />
-              <SkillGroup title="Databases" value={skills.databases.join(", ")} />
-              <SkillGroup title="Architecture & design" value={skills.architecture.join(", ")} />
-              <SkillGroup title="Security & auth" value={skills.security.join(", ")} />
-              <SkillGroup title="Engineering principles" value={skills.engineering.join(", ")} />
-              <SkillGroup title="Tools & platforms" value={skills.tools.join(", ")} />
+              <SkillGroup title="Core Languages & Frameworks" value={skills.languages.map((item) => `${item.name} (${item.frameworks.join(", ")})`).join("; ")} />
+              <SkillGroup title="Databases & Performance" value={`${skills.databases.join(", ")}; ${skills.engineering.slice(0, 4).join(", ")}`} />
+              <SkillGroup title="Architecture & System Design" value={skills.architecture.join(", ")} />
+              <SkillGroup title="Security & Authorization" value={skills.security.join(", ")} />
+              <SkillGroup title="DevOps & Tools" value={skills.tools.join(", ")} />
             </div>
           </section>
 
@@ -102,8 +101,8 @@ export default function ResumePage() {
                 <div key={item.company}>
                   <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                     <div>
-                      <h3 className="font-semibold text-foreground">{item.role}</h3>
-                      <p className="mt-1 text-sm font-medium text-primary">{item.company}</p>
+                      <h3 className="font-semibold text-foreground text-lg">{item.role}</h3>
+                      <p className="mt-0.5 text-sm font-medium text-primary">{item.company}</p>
                     </div>
                     <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted-foreground md:text-right">
                       <p>{item.period}</p>
@@ -118,11 +117,21 @@ export default function ResumePage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-4 space-y-4">
+                  <div className="mt-5 space-y-4">
                     {item.projects.map((project) => (
-                      <div key={project.name} className="border-l-2 border-primary/30 pl-4">
-                        <p className="text-sm font-medium text-foreground">
-                          {project.name} <span className="font-normal text-primary">- {project.tech}</span>
+                      <div key={project.name} className="border-l-2 border-primary/40 pl-4 py-1">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                          <p className="text-sm font-semibold text-foreground">
+                            {project.name}
+                          </p>
+                          {project.role && (
+                            <span className="font-mono text-[11px] text-primary">
+                              {project.role}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs font-mono text-muted-foreground mt-0.5">
+                          {project.tech}
                         </p>
                         <ul className="mt-2 space-y-1 text-sm leading-6 text-muted-foreground">
                           {project.highlights.map((highlight) => (
@@ -147,7 +156,7 @@ export default function ResumePage() {
               <p>
                 <span className="font-medium text-foreground">{education.school}</span>
                 <br />
-                {education.degree} - {education.major}
+                {education.degree} in {education.major}
               </p>
               <p className="font-mono text-[11px] uppercase tracking-[0.1em]">
                 {education.period}
@@ -163,7 +172,7 @@ export default function ResumePage() {
 function SkillGroup({ title, value }: { title: string; value: string }) {
   return (
     <div>
-      <h3 className="font-mono text-[11px] uppercase tracking-[0.1em] text-primary">
+      <h3 className="font-mono text-[11px] uppercase tracking-[0.1em] text-primary font-medium">
         {title}
       </h3>
       <p className="mt-1.5 text-sm leading-6 text-muted-foreground">{value}</p>

@@ -3,7 +3,7 @@
 ## Thông tin cá nhân
 
 - Tên: Nguyễn Huy Hùng
-- Vai trò: Technical Engineer
+- Vai trò: Software Engineer
 - Địa điểm: Thành phố Hồ Chí Minh, Việt Nam
 - Email: yisus.nhh.dev@gmail.com
 - Số điện thoại: 0967 622 166
@@ -13,59 +13,55 @@
 ## Ghi chú nội dung bắt buộc
 
 - Start date tại Onschool: 11/2022
-- Tech Lead role: SLC là hiện tại, SRMA là giai đoạn sau
+- Tech Lead role: APM là hiện tại, SRMA/SRM là giai đoạn sau
 - Dùng cụm `Event-Driven Architecture`, không dùng `Event Sourcing`
 - Không đưa các dự án bị đánh dấu `không nên đưa vào CV`
+- CV chân thực, đúng những gì đã làm, không đưa công nghệ chưa từng kinh qua vào để tránh bị đánh giá chém gió.
 
 ## Tóm tắt nghề nghiệp
 
-Kỹ sư Kỹ thuật (Technical Engineer) với hơn 4 năm kinh nghiệm làm cầu nối giữa nhu cầu nghiệp vụ và giải pháp kỹ thuật trong lĩnh vực công nghệ giáo dục (EdTech) và quản lý tài chính. Có thế mạnh về thu thập, phân tích và tài liệu hóa yêu cầu kỹ thuật/nghiệp vụ từ stakeholders; chuyển đổi nhu cầu kinh doanh thành đặc tả chức năng (functional specifications), đặc tả kỹ thuật (technical specifications), user stories, use cases, process flows và data models. Đồng thời có năng lực thực chiến thiết kế kiến trúc hệ thống và phát triển backend sử dụng PHP/Laravel và Java/Spring Boot theo các nguyên tắc Domain-Driven Design (DDD) và Clean Architecture.
+Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực EdTech và Quản lý tài chính. Thành thạo **Java 21 / Spring Boot** và **PHP / Laravel**, am hiểu về kiến trúc phần mềm (**Domain-Driven Design (DDD)**, **Modular Monolith**, **Clean / Hexagonal Architecture**, **Event-Driven Architecture**). Có thế mạnh vượt trội về thiết kế backend, tối ưu hiệu năng (xử lý N+1 query, giải pháp download bất đồng bộ cho báo cáo dung lượng lớn, tối ưu thuật toán API $O(1)$, cơ chế On-demand Image Resizing, chuẩn hóa DB migration đa instance), thiết kế phân quyền/xác thực bảo mật (OAuth2, JWT, Spring Security) và thiết kế quy trình bàn giao dữ liệu & công cụ làm việc giữa các phòng ban.
 
 ## Kỹ năng kỹ thuật
 
-### Functional & Technical Engineering
-
-- Requirement Gathering & Analysis
-- Functional & Technical Specifications
-- User Stories, Use Cases & Process Flows
-- Data Modeling & Domain Modeling (DDD)
-
 ### Languages & Frameworks
 
+- Java, Spring Boot (Spring Security, Spring Data JPA)
 - PHP, Laravel, Lumen
-- Java, Spring Boot
 - JavaScript, TypeScript
 - Vue.js, React, Next.js, Nuxt.js
 
-### Databases
+### Databases & Data Engineering
 
 - PostgreSQL
 - MySQL
 - MongoDB
+- Truy vấn SQL & Indexing, Tối ưu hóa N+1 query, Asynchronous Batch Download, On-demand Image Resizing, Data Migration Strategy
 
-### Architecture & Design
+### Architecture & Design Patterns
 
-- Domain-Driven Design
+- Domain-Driven Design (DDD)
 - Hexagonal Architecture
 - Clean Architecture
 - Modular Monolith
-- Event-Driven Architecture
-- EAV Model
+- Backend-for-Frontend (BFF)
+- Event-Driven Architecture (NATS)
+- RESTful API Design
 
-### Engineering Principles
+### Security & Authentication
 
-- OOP
-- SOLID
-- Design Patterns
-- RESTful API
-- Authentication & Authorization
+- OAuth2 (Integration with 3rd party)
+- JWT (Internal services authentication)
+- Spring Security & Method-level Authorization (Custom `PermissionEvaluator`)
 
-### Security & Auth
+### Engineering Principles & Practices
 
-- OAuth2
-- JWT
-- Spring Security
-- Method-level Authorization
+- OOP, SOLID, Design Patterns
+- API Performance Tuning (Algorithmic optimization O(N^2) -> O(1))
+- Multi-instance Git Repository Management & Branching strategy
+- Blue-Green Deployment (Zero-downtime releases)
+- Backward Compatibility & Domain Concept Standardization
+- Inter-system Data Handoff & Department Tooling Workflow Design
 
 ### Tools & Platforms
 
@@ -74,46 +70,56 @@ Kỹ sư Kỹ thuật (Technical Engineer) với hơn 4 năm kinh nghiệm làm 
 - Jira, Maven
 - Neovim, PhpStorm, VS Code
 
-## Kinh nghiệm
+## Kinh nghiệm làm việc
 
 ### Onschool Edtech Group
 
 - Thời gian: 11/2022 - nay
-- Vai trò: Technical Engineer (Tech Lead cho SLC; Tech Lead cho SRMA ở giai đoạn sau)
+- Vai trò: Software Engineer / Tech Lead (Tech Lead cho APM; Tech Lead cho SRM/SRMA ở giai đoạn sau)
 - Địa điểm: Thành phố Hồ Chí Minh, Việt Nam
 
-#### Sản phẩm & Hệ thống chính
+#### Sản phẩm & Dự án chi tiết
 
-- SLC (Student Life Cycle) — Java 21, Spring Boot, Next.js, PostgreSQL (Tech Lead)
-- SRM System (Student Management) — Lumen, Laravel, React, Nuxt.js, PostgreSQL (Technical Engineer, Tech Lead giai đoạn sau)
-- Moodle Integration — PHP, Moodle Plugin Development
+##### 1. APM (Academic Process Management) — Java 21, Spring Boot, Next.js, PostgreSQL (Tech Lead / Software Engineer)
+- **Nghiệp vụ:** Quản lý thông tin kế hoạch, lộ trình, quá trình học tập của sinh viên.
+- **Đóng góp kỹ thuật:**
+  - Thiết kế source code áp dụng Platform architecture, DDD, Core Concept, Backend-for-Frontend (BFF), Hexagonal architecture giúp dễ dàng cải tiến khi tích hợp nhiều hệ thống.
+  - Áp dụng OAuth2 để bảo mật dữ liệu khi cung cấp cho bên thứ 3 và JWT cho kết nối nội bộ; triển khai method-level authorization với Spring Security & custom `PermissionEvaluator`.
+  - Thiết kế và triển khai quy trình Blue-Green deployment trên production giúp đảm bảo zero-downtime và khả năng rollback an toàn.
 
-#### Trách nhiệm & Đóng góp chính tại Onschool
+##### 2. Hệ sinh thái SRM System (SRMA, SRM1, SV50) — PHP (Laravel, Lumen), PostgreSQL, MySQL, React, Nuxt.js (Software Engineer / Tech Lead giai đoạn sau)
+- **Nghiệp vụ:** Quản lý hồ sơ sinh viên, tiến trình học tập, đơn từ, tài chính và quy trình đăng ký nhập học của các trường đại học đối tác trên nhiều instance phân tán.
+- **Đóng góp kỹ thuật:**
+  - Phát triển tính năng liên quan đến Sinh viên, Điểm, xử lý đơn từ, quản lý tài chính thực thu, phải thu, sao kê ngân hàng và tự động đối soát sao kê (auto match bank statements).
+  - Phát triển giải pháp **download bất đồng bộ** (asynchronous batch download) xử lý các bộ dữ liệu/báo cáo lớn mà không gây quá tải tài nguyên hay nén RAM.
+  - Refactor các hệ thống legacy SRM1 & SV50, tối ưu tốc độ xử lý bằng cách loại bỏ triệt để N+1 queries và áp dụng phân trang hiệu năng cao.
+  - Design chiến lược DB migration chuẩn hóa cấu trúc dữ liệu đa instance và tái cấu trúc Git repos theo chiến lược branching tối ưu.
+  - **Thiết kế quy trình & công cụ bàn giao dữ liệu:** Đề xuất và xây dựng quy trình làm việc cùng công cụ chuẩn hóa bàn giao file dữ liệu giữa các phòng ban vận hành và 3 hệ thống thành phần (SRMA, SV50, SRM1), đảm bảo dữ liệu không bị thất thoát hay sai lệch.
 
-- Thu thập, phân tích và tài liệu hóa các yêu cầu kỹ thuật và nghiệp vụ từ stakeholders.
-- Chuyển đổi nhu cầu kinh doanh thành các đặc tả chức năng (functional specifications) và đặc tả kỹ thuật (technical specifications) rõ ràng, chuẩn xác.
-- Xây dựng user stories, use cases, process flows (luồng quy trình) và data models (mô hình dữ liệu).
-- Đảm bảo các yêu cầu hoàn chỉnh, có tính khả thi kỹ thuật và gắn kết chặt chẽ với mục tiêu kinh doanh.
-- Thiết kế giải pháp kỹ thuật, mô hình hóa domain (DDD, Hexagonal Architecture, Clean Architecture) cho các luồng nghiệp vụ như vòng đời học viên (SLC), quản lý học viên (SRM), tiến trình học tập, trạng thái học phí và phân quyền.
-- Triển khai kiến trúc Backend-for-Frontend (BFF), xác thực OAuth2 cho tích hợp bên thứ ba và JWT cho dịch vụ nội bộ; thiết kế phân quyền method-level authorization với Spring Security và custom `PermissionEvaluator`.
-- Thiết kế và vận hành quy trình blue-green deployment trên production giúp đảm bảo zero-downtime và khả năng rollback an toàn.
-- Cải thiện hiệu năng backend và khả năng quan sát hệ thống (observability) bằng cách tối ưu database access, xử lý N+1 query và bổ sung structured logging/tracing.
-- Reverse-engineer cơ chế autoload Frankenstyle của Moodle và phát triển local plugin với external functions cùng web service APIs.
-- Trực tiếp làm việc với stakeholder để làm rõ yêu cầu, đào tạo/hướng dẫn người dùng và hỗ trợ điều phối đội ngũ (coordination) trong suốt giai đoạn triển khai.
+##### 3. Moodle LMS Integration — PHP, Moodle Core, REST Web Service APIs (Software Engineer)
+- **Nghiệp vụ:** Tích hợp dữ liệu và tiến trình học tập giữa Moodle LMS và hệ thống Onschool.
+- **Đóng góp kỹ thuật:**
+  - Nghiên cứu Moodle core internals; phát triển local plugin cùng các REST APIs cho sự kiện học tập, course module, sinh viên, điểm số, live class.
+  - Sử dụng HashMap / Lookup Table thay cho vòng lặp foreach lồng nhau ($O(N^2) \rightarrow O(1)$) để tăng tốc độ xử lý API rõ rệt.
+
+##### 4. Data Pipeline & Data Controlling System — Java, PHP, PostgreSQL, REST API (Software Engineer / Delivery Manager)
+- **Nghiệp vụ:** Đồng bộ dữ liệu liên hệ thống và giám sát cảnh báo vận hành.
+- **Đóng góp kỹ thuật:**
+  - Thiết kế logic chuyển đổi và đồng bộ dữ liệu giữa các CSDL của các hệ thống khác nhau.
+  - Thiết kế quy trình tự động kiểm toán (daily / auto auditing) giám sát xem datapipeline có chạy hay không.
+  - Thiết kế nghiệp vụ báo cáo vận hành và hệ thống cảnh báo (quá hạn, sắp tới hạn, sai logic); xây dựng chuẩn REST APIs cho bên thứ ba tích hợp.
 
 ### Freelance
 
 - Thời gian: 2022 - nay
-- Vai trò: Technical Engineer
+- Vai trò: Software Engineer
 - Địa điểm: Remote
 
-#### Financial Management Platform
-
-- Laravel, React, MongoDB
-- Phân tích nghiệp vụ tài chính của khách hàng và định nghĩa mô hình dữ liệu linh hoạt bằng EAV model.
+#### Financial Management Platform — Laravel, React, MongoDB, NATS
+- Phân tích nghiệp vụ tài chính và định nghĩa mô hình dữ liệu linh hoạt bằng Entity-Attribute-Value (EAV).
 - Xây nền tảng quản lý tài chính theo hướng mô-đun với PSR-compliant PHP core để tái sử dụng business logic.
-- Triển khai event-driven workflows với NATS cho xử lý giao dịch bất đồng bộ và thông báo thời gian thực.
-- Tối ưu frontend loading bằng lazy loading và client-side rendering improvements.
+- Triển khai Event-Driven Architecture với NATS messaging queue cho xử lý giao dịch bất đồng bộ và thông báo thời gian thực.
+- Áp dụng cơ chế **On-demand Image Resizing / Dynamic Image Optimization** kết hợp lazy loading và client-side rendering, giúp tối ưu băng thông và giảm 60%+ thời gian tải trang.
 
 ## Học vấn
 

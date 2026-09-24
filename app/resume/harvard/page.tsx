@@ -3,8 +3,11 @@
 import Link from "next/link";
 import { ArrowLeft, FileText, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { portfolioData } from "@/data/portfolio";
 
 export default function HarvardResumePage() {
+  const { personal, about, skills, experience, education } = portfolioData;
+
   return (
     <>
       {/* Top action bar - hidden when printing */}
@@ -48,10 +51,10 @@ export default function HarvardResumePage() {
           {/* Header */}
           <header className="text-center">
             <h1 className="text-2xl font-bold uppercase tracking-widest text-black">
-              NGUYEN HUY HUNG
+              {personal.name.toUpperCase()}
             </h1>
             <p className="mt-2 text-xs leading-relaxed text-zinc-800">
-              Ho Chi Minh City, Vietnam &nbsp;|&nbsp; Phone: 0967 622 166 &nbsp;|&nbsp; Email: yisus.nhh.dev@gmail.com
+              {personal.location} &nbsp;|&nbsp; Phone: {personal.phone} &nbsp;|&nbsp; Email: {personal.email}
             </p>
             <p className="mt-1 text-xs leading-relaxed text-zinc-800">
               LinkedIn: linkedin.com/in/yisus-nhh &nbsp;|&nbsp; GitHub: github.com/YiSuSNHH
@@ -61,10 +64,10 @@ export default function HarvardResumePage() {
           {/* Professional Summary */}
           <section className="mt-6">
             <h2 className="border-b border-black pb-1 text-xs font-bold uppercase tracking-wider text-black">
-              Professional Summary
+              Executive Summary
             </h2>
             <p className="mt-2.5 text-xs leading-relaxed text-zinc-900 text-justify">
-              Technical Engineer with 4+ years of experience bridging business vision and engineering execution across educational technology and financial management platforms. Specialized in gathering and analyzing business/technical requirements from stakeholders, converting business needs into functional &amp; technical specifications, user stories, use cases, process flows, and data models while designing resilient backend architectures with PHP/Laravel and Java/Spring Boot.
+              {about.summary}
             </p>
           </section>
 
@@ -75,22 +78,19 @@ export default function HarvardResumePage() {
             </h2>
             <ul className="mt-2.5 space-y-1.5 text-xs leading-relaxed text-zinc-900">
               <li>
-                <strong className="font-semibold text-black">Requirements &amp; Specifications:</strong> Requirement Analysis, Functional &amp; Technical Specifications, User Stories, Use Cases, Process Flows, Data Modeling
+                <strong className="font-semibold text-black">Core Languages &amp; Frameworks:</strong> {skills.languages.map((item) => `${item.name} (${item.frameworks.join(", ")})`).join("; ")}
               </li>
               <li>
-                <strong className="font-semibold text-black">Languages &amp; Frameworks:</strong> PHP (Laravel, Lumen), Java (Spring Boot), JavaScript/TypeScript (React, Next.js, Vue.js, Nuxt.js)
+                <strong className="font-semibold text-black">Databases &amp; Performance:</strong> {skills.databases.join(", ")}; SQL tuning, high-performance pagination, N+1 query elimination, DB migration strategies
               </li>
               <li>
-                <strong className="font-semibold text-black">Databases:</strong> PostgreSQL, MySQL, MongoDB
+                <strong className="font-semibold text-black">Architecture &amp; System Design:</strong> {skills.architecture.join(", ")}
               </li>
               <li>
-                <strong className="font-semibold text-black">Architecture &amp; Design:</strong> Domain-Driven Design (DDD), Hexagonal Architecture, Clean Architecture, Modular Monolith, Event-Driven Architecture, EAV Model
+                <strong className="font-semibold text-black">Security &amp; Authorization:</strong> {skills.security.join(", ")}
               </li>
               <li>
-                <strong className="font-semibold text-black">Security &amp; Authorization:</strong> OAuth2, JWT, Spring Security, Method-level Authorization
-              </li>
-              <li>
-                <strong className="font-semibold text-black">Tools &amp; Platforms:</strong> Git, GitHub, GitLab, Docker, Linux, Jira, Maven, PhpStorm, VS Code
+                <strong className="font-semibold text-black">DevOps &amp; Tools:</strong> {skills.tools.join(", ")}
               </li>
             </ul>
           </section>
@@ -102,81 +102,26 @@ export default function HarvardResumePage() {
             </h2>
 
             <div className="mt-3.5 space-y-5">
-              {/* Onschool Edtech Group */}
-              <div>
-                <div className="flex flex-col justify-between text-xs sm:flex-row">
-                  <span className="font-bold text-black">Onschool Edtech Group</span>
-                  <span className="italic text-zinc-800">Ho Chi Minh City, Vietnam</span>
+              {experience.map((exp) => (
+                <div key={exp.company}>
+                  <div className="flex flex-col justify-between text-xs sm:flex-row">
+                    <span className="font-bold text-black">{exp.company}</span>
+                    <span className="italic text-zinc-800">{exp.location}</span>
+                  </div>
+                  <div className="flex flex-col justify-between text-xs sm:flex-row">
+                    <span className="italic text-zinc-900">{exp.role}</span>
+                    <span className="italic text-zinc-800">{exp.period}</span>
+                  </div>
+                  <p className="mt-1 text-[11px] italic text-zinc-700">
+                    {exp.summary}
+                  </p>
+                  <ul className="mt-2 list-disc space-y-1 pl-4 text-xs leading-relaxed text-zinc-900">
+                    {exp.achievements.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="flex flex-col justify-between text-xs sm:flex-row">
-                  <span className="italic text-zinc-900">Technical Engineer (Tech Lead for SLC; Tech Lead for SRMA in later phase)</span>
-                  <span className="italic text-zinc-800">11/2022 – Present</span>
-                </div>
-                <p className="mt-1 text-[11px] italic text-zinc-700">
-                  Core Systems: SLC (Student Life Cycle) | SRM System (Student Management) | Moodle Integration
-                </p>
-                <ul className="mt-2 list-disc space-y-1 pl-4 text-xs leading-relaxed text-zinc-900">
-                  <li>
-                    Gather, analyze, and document business and technical requirements from stakeholders across educational technology workflows.
-                  </li>
-                  <li>
-                    Translate business needs into clear functional and technical specifications, user stories, use cases, process flows, and data models.
-                  </li>
-                  <li>
-                    Ensure requirements are complete, feasible, and strictly aligned with business objectives.
-                  </li>
-                  <li>
-                    Lead technical design and backend architecture for student lifecycle and management platforms using Domain-Driven Design (DDD), Hexagonal Architecture, and Clean Architecture.
-                  </li>
-                  <li>
-                    Implement Backend-for-Frontend (BFF) authentication patterns with OAuth2 for third-party integrations and JWT for internal microservices.
-                  </li>
-                  <li>
-                    Build fine-grained authorization using Spring Security and a custom <code className="font-mono text-[11px]">PermissionEvaluator</code> for method-level access control across APIs.
-                  </li>
-                  <li>
-                    Design and operate blue-green deployment pipelines for production releases, enabling zero-downtime deployment and automated rollback.
-                  </li>
-                  <li>
-                    Improve backend performance and observability by optimizing database access, eliminating N+1 query issues, and implementing structured logging and tracing.
-                  </li>
-                  <li>
-                    Reverse-engineer Moodle&apos;s Frankenstyle autoloading mechanism and develop local plugins with external web service APIs.
-                  </li>
-                  <li>
-                    Collaborate directly with stakeholders, conduct user training sessions, and support cross-functional team coordination throughout project lifecycles.
-                  </li>
-                </ul>
-              </div>
-
-              {/* Freelance */}
-              <div>
-                <div className="flex flex-col justify-between text-xs sm:flex-row">
-                  <span className="font-bold text-black">Freelance</span>
-                  <span className="italic text-zinc-800">Remote</span>
-                </div>
-                <div className="flex flex-col justify-between text-xs sm:flex-row">
-                  <span className="italic text-zinc-900">Technical Engineer</span>
-                  <span className="italic text-zinc-800">2022 – Present</span>
-                </div>
-                <p className="mt-1 text-[11px] italic text-zinc-700">
-                  Financial Management Platform (Laravel, React, MongoDB)
-                </p>
-                <ul className="mt-2 list-disc space-y-1 pl-4 text-xs leading-relaxed text-zinc-900">
-                  <li>
-                    Analyze client business requirements and design flexible financial entities using an Entity-Attribute-Value (EAV) model to support dynamic business attributes.
-                  </li>
-                  <li>
-                    Build a modular Laravel-based financial management platform with a PSR-compliant PHP core to keep business logic reusable across modules.
-                  </li>
-                  <li>
-                    Implement event-driven workflows with NATS for asynchronous transaction processing and real-time operational notifications.
-                  </li>
-                  <li>
-                    Improve frontend loading experience by implementing lazy loading and optimizing client-side rendering.
-                  </li>
-                </ul>
-              </div>
+              ))}
             </div>
           </section>
 
@@ -187,12 +132,12 @@ export default function HarvardResumePage() {
             </h2>
             <div className="mt-3">
               <div className="flex flex-col justify-between text-xs sm:flex-row">
-                <span className="font-bold text-black">Hanoi Open University</span>
+                <span className="font-bold text-black">{education.school}</span>
                 <span className="italic text-zinc-800">Hanoi, Vietnam</span>
               </div>
               <div className="flex flex-col justify-between text-xs sm:flex-row">
-                <span className="italic text-zinc-900">Bachelor of Engineering in Software Technology</span>
-                <span className="italic text-zinc-800">2019 – 2024</span>
+                <span className="italic text-zinc-900">{education.degree} in {education.major}</span>
+                <span className="italic text-zinc-800">{education.period}</span>
               </div>
             </div>
           </section>
