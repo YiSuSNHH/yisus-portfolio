@@ -84,6 +84,13 @@ Software Engineer với hơn 4 năm kinh nghiệm thực chiến trong thiết k
 
 ---
 
+## Người tham chiếu (References)
+
+- **Phạm Anh Tuấn** — Trưởng Phòng (Onschool Edtech Group)
+- **Số điện thoại:** +84 902 996 885
+
+---
+
 ## Học vấn
 
 ### Đại học Mở Hà Nội

@@ -124,6 +124,11 @@ Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực 
 - Áp dụng cơ chế **On-demand Image Resizing / Dynamic Image Optimization** kết hợp lazy loading và client-side rendering, giúp tối ưu băng thông và giảm 60%+ thời gian tải trang.
 - Triển khai ứng dụng với Docker Compose và Nginx reverse proxy.
 
+## Người tham chiếu (References)
+
+- **Phạm Anh Tuấn** — Trưởng Phòng (Onschool Edtech Group)
+- **Số điện thoại:** +84 902 996 885
+
 ## Học vấn
 
 - Hanoi Open University

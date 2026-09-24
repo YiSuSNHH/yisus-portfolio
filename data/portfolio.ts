@@ -259,6 +259,15 @@ export const portfolioData = {
     },
   ],
 
+  references: [
+    {
+      name: "Phạm Anh Tuấn",
+      title: "Trưởng Phòng (Department Head)",
+      company: "Onschool Edtech Group",
+      phone: "+84 902 996 885",
+    },
+  ],
+
   education: {
     school: "Hanoi Open University",
     degree: "Bachelor of Engineering",

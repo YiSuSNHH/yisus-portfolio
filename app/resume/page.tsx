@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Github, Linkedin, Mail, MapPin, Phone, Printer } from "lucide-react";
+import { ArrowLeft, Github, Linkedin, Mail, MapPin, Phone, Printer, UserCheck } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { portfolioData } from "@/data/portfolio";
 
 export default function ResumePage() {
-  const { personal, about, skills, experience, education } = portfolioData;
+  const { personal, about, skills, experience, education, references } = portfolioData;
 
   return (
     <>
@@ -147,6 +147,33 @@ export default function ResumePage() {
           </section>
 
           <Separator />
+
+          {references && references.length > 0 && (
+            <>
+              <section>
+                <h2 className="text-xl font-semibold tracking-[-0.03em] text-foreground">
+                  References
+                </h2>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  {references.map((ref) => (
+                    <div key={ref.name} className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-800/30 p-4">
+                      <div className="flex items-center gap-2">
+                        <UserCheck size={16} className="text-primary" />
+                        <p className="font-semibold text-foreground">{ref.name}</p>
+                      </div>
+                      <p className="text-sm font-medium text-primary mt-1">{ref.title} — {ref.company}</p>
+                      <a href={`tel:${ref.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mt-2 font-mono transition">
+                        <Phone size={13} />
+                        {ref.phone}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <Separator />
+            </>
+          )}
 
           <section>
             <h2 className="text-xl font-semibold tracking-[-0.03em] text-foreground">

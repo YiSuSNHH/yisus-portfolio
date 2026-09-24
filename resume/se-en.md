@@ -84,6 +84,13 @@ Software Engineer with 4+ years of hands-on experience designing, refactoring, a
 
 ---
 
+## References
+
+- **Pham Anh Tuan** — Department Head (Trưởng Phòng) — Onschool Edtech Group
+- **Phone:** +84 902 996 885
+
+---
+
 ## Education
 
 ### Hanoi Open University

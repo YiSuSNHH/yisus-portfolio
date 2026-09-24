@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { portfolioData } from "@/data/portfolio";
 
 export default function HarvardResumePage() {
-  const { personal, about, skills, experience, education } = portfolioData;
+  const { personal, about, skills, experience, education, references } = portfolioData;
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function HarvardResumePage() {
 
           <div className="flex items-center gap-3">
             <span className="hidden font-mono text-xs text-muted-foreground md:inline-block">
-              Harvard B&W Style
+              Harvard B&amp;W Style
             </span>
             <Button
               type="button"
@@ -124,6 +124,23 @@ export default function HarvardResumePage() {
               ))}
             </div>
           </section>
+
+          {/* References */}
+          {references && references.length > 0 && (
+            <section className="mt-6">
+              <h2 className="border-b border-black pb-1 text-xs font-bold uppercase tracking-wider text-black">
+                References
+              </h2>
+              <div className="mt-3 space-y-2">
+                {references.map((ref) => (
+                  <div key={ref.name} className="text-xs leading-relaxed text-zinc-900">
+                    <span className="font-bold text-black">{ref.name}</span> &nbsp;—&nbsp; <span className="italic text-zinc-800">{ref.title} ({ref.company})</span>
+                    <p className="text-zinc-800 font-mono text-[11px]">Phone: {ref.phone}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Education */}
           <section className="mt-6">
