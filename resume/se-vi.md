@@ -40,7 +40,7 @@ Software Engineer với hơn 4 năm kinh nghiệm thực chiến trong thiết k
 
 #### 2. Hệ thống Data Pipeline & Data Controlling System
 *Công nghệ: Python, Apache Airflow, PostgreSQL 16 (OAA DB & APM DB), Bun 1.3+, Hono 4 (REST + OpenAPI 3), Docker Compose, Nginx*
-- **Vai trò:** Software Engineer / Delivery Manager
+- **Vai trò:** Delivery Manager
 - **Mục tiêu:** Đồng bộ dữ liệu tự động giữa CSDL OAA (OAA Database) và APM (APM Database), xây dựng các microservices API tốc độ cao và tự động hóa giám sát/cảnh báo vận hành.
 - **Đóng góp kỹ thuật:**
   - Thiết kế và lập trình các DAGs trên **Python & Apache Airflow** để tự động hóa luồng chuyển đổi và đồng bộ dữ liệu giữa PostgreSQL 16 OAA Database và APM Database.

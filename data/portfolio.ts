@@ -104,7 +104,7 @@ export const portfolioData = {
     {
       name: "Data Pipeline & Data Controlling System",
       context: "Onschool Edtech Group",
-      role: "Software Engineer / Delivery Manager",
+      role: "Delivery Manager",
       tech: "Python, Apache Airflow, PostgreSQL 16 (OAA & APM DBs), Bun 1.3+, Hono 4 (REST + OpenAPI 3), Docker Compose, Nginx",
       summary:
         "Designed automated data pipeline workflows using Python & Apache Airflow between OAA and APM databases. Built lightweight REST APIs with Bun 1.3+ & Hono 4 (OpenAPI 3) deployed with Docker Compose and Nginx.",
@@ -149,10 +149,10 @@ export const portfolioData = {
       period: "11/2022 - Present",
       location: "Ho Chi Minh City, Vietnam",
       summary:
-        "Designed, refactored, and optimized mission-critical systems in educational technology. Served as Software Engineer / Tech Lead for APM, SRM, and Data Pipeline platforms.",
+        "Designed, refactored, and optimized mission-critical systems in educational technology. Served as Software Engineer / Tech Lead for APM and SRM (SRMA, SRM1, SV50) platforms, and Delivery Manager for Data Pipeline & Data Controlling System.",
       achievements: [
         "Designed and developed backend architecture for academic process management (APM) using Domain-Driven Design (DDD), Hexagonal Architecture, and Backend-for-Frontend (BFF).",
-        "Engineered automated Data Pipeline & Data Controlling workflows using Python and Apache Airflow between PostgreSQL 16 OAA DB and APM DB.",
+        "Served as Delivery Manager for automated Data Pipeline & Data Controlling workflows using Python and Apache Airflow between PostgreSQL 16 OAA DB and APM DB.",
         "Developed lightweight, high-performance REST microservices using Bun 1.3+ and Hono 4 framework adhering to OpenAPI 3 specifications.",
         "Deployed and managed containerized services using Docker Compose and Nginx reverse proxy.",
         "Engineered secure authentication & authorization infrastructure (OAuth2, JWT, Spring Security method-level custom PermissionEvaluator).",
@@ -176,7 +176,7 @@ export const portfolioData = {
         },
         {
           name: "Data Pipeline & Data Controlling System",
-          role: "Software Engineer / Delivery Manager",
+          role: "Delivery Manager",
           tech: "Python, Apache Airflow, PostgreSQL 16 (OAA & APM DBs), Bun 1.3+, Hono 4 (OpenAPI 3), Docker Compose, Nginx",
           highlights: [
             "Built Python & Apache Airflow DAGs for automated data sync and daily auditing between OAA DB and APM DB.",

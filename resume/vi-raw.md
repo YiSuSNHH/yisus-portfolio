@@ -76,7 +76,7 @@ Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực 
 ### Onschool Edtech Group
 
 - Thời gian: 11/2022 - nay
-- Vai trò: Software Engineer / Tech Lead (Tech Lead cho APM; Tech Lead cho SRM/SRMA ở giai đoạn sau)
+- Vai trò: Software Engineer / Tech Lead (Tech Lead cho APM; Tech Lead cho SRM/SRMA ở giai đoạn sau; Delivery Manager cho Data Pipeline)
 - Địa điểm: Thành phố Hồ Chí Minh, Việt Nam
 
 #### Sản phẩm & Dự án chi tiết
@@ -88,7 +88,7 @@ Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực 
   - Áp dụng OAuth2 để bảo mật dữ liệu khi cung cấp cho bên thứ 3 và JWT cho kết nối nội bộ; triển khai method-level authorization với Spring Security & custom `PermissionEvaluator`.
   - Thiết kế và triển khai quy trình Blue-Green deployment trên production giúp đảm bảo zero-downtime và khả năng rollback an toàn.
 
-##### 2. Data Pipeline & Data Controlling System — Python, Apache Airflow, PostgreSQL 16 (OAA DB & APM DB), Bun 1.3+, Hono 4 (OpenAPI 3), Docker Compose, Nginx (Software Engineer / Delivery Manager)
+##### 2. Data Pipeline & Data Controlling System — Python, Apache Airflow, PostgreSQL 16 (OAA DB & APM DB), Bun 1.3+, Hono 4 (OpenAPI 3), Docker Compose, Nginx (Delivery Manager)
 - **Nghiệp vụ:** Đồng bộ dữ liệu liên hệ thống tự động giữa CSDL OAA và APM, xây dựng REST APIs chuẩn OpenAPI 3 và giám sát cảnh báo vận hành.
 - **Đóng góp kỹ thuật:**
   - Thiết kế và lập trình các DAGs trên **Python & Apache Airflow** để tự động hóa luồng đồng bộ dữ liệu giữa CSDL PostgreSQL 16 OAA và CSDL APM.
@@ -101,7 +101,7 @@ Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực 
 - **Đóng góp kỹ thuật:**
   - Phát triển tính năng liên quan đến Sinh viên, Điểm, xử lý đơn từ, quản lý tài chính thực thu, phải thu, sao kê ngân hàng và tự động đối soát sao kê (auto match bank statements).
   - Phát triển giải pháp **download bất đồng bộ** (asynchronous batch download) xử lý các bộ dữ liệu/báo cáo lớn mà không gây quá tải tài nguyên hay nén RAM.
-  - Refactor các hệ thống legacy SRM1 & SV50, tối ưu tốc độ xử lý bằng cách loại bỏ triệt me N+1 queries và áp dụng phân trang hiệu năng cao trên CSDL PostgreSQL 16.
+  - Refactor các hệ thống legacy SRM1 & SV50, tối ưu tốc độ xử lý bằng cách loại bỏ triệt để N+1 queries và áp dụng phân trang hiệu năng cao trên CSDL PostgreSQL 16.
   - Design chiến lược DB migration chuẩn hóa cấu trúc dữ liệu đa instance và tái cấu trúc Git repos theo chiến lược branching tối ưu.
   - **Thiết kế quy trình & công cụ bàn giao dữ liệu:** Đề xuất và xây dựng quy trình làm việc cùng công cụ chuẩn hóa bàn giao file dữ liệu giữa các phòng ban vận hành và 3 hệ thống thành phần (SRMA, SV50, SRM1), đảm bảo dữ liệu không bị thất thoát hay sai lệch.
 

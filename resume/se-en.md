@@ -40,7 +40,7 @@ Software Engineer with 4+ years of hands-on experience designing, refactoring, a
 
 #### 2. Data Pipeline & Data Controlling System
 *Tech Stack: Python, Apache Airflow, PostgreSQL 16 (OAA & APM DBs), Bun 1.3+, Hono 4 (REST + OpenAPI 3), Docker Compose, Nginx*
-- **Role:** Software Engineer / Delivery Manager
+- **Role:** Delivery Manager
 - **Objective:** Automated data pipeline synchronization between OAA Database and APM Database, high-performance microservices, and operational monitoring.
 - **Engineering Contributions:**
   - Designed and programmed **Python & Apache Airflow** DAGs to automate data sync workflows between PostgreSQL 16 OAA Database and APM Database.
