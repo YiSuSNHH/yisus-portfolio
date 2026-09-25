@@ -1,72 +1,108 @@
 # Nguyễn Huy Hùng
 
-**Kỹ sư Kỹ thuật (Technical Engineer)**<br>
+**Software Engineer**<br>
 Thành phố Hồ Chí Minh, Việt Nam<br>
 Email: yisus.nhh.dev@gmail.com | Điện thoại: 0967 622 166<br>
 GitHub: [YiSuSNHH](https://github.com/YiSuSNHH) | LinkedIn: [yisus-nhh](https://www.linkedin.com/in/yisus-nhh)
 
 ---
 
-## Giới thiệu
+## Tóm tắt nghề nghiệp
 
-Kỹ sư Kỹ thuật (Technical Engineer) với hơn 4 năm kinh nghiệm làm cầu nối giữa nhu cầu nghiệp vụ và giải pháp kỹ thuật trong lĩnh vực công nghệ giáo dục và quản lý tài chính. Có thế mạnh về thu thập, phân tích và tài liệu hóa yêu cầu từ stakeholders; chuyển đổi nhu cầu kinh doanh thành đặc tả chức năng (functional specs), đặc tả kỹ thuật (technical specs), user stories, use cases, process flows và data models; đồng thời thiết kế kiến trúc hệ thống và phát triển backend vững chắc với PHP/Laravel, Java/Spring Boot.
+Software Engineer với hơn 4 năm kinh nghiệm thực tế thiết kế, refactor và tối ưu hóa các hệ thống quy mô lớn trong lĩnh vực EdTech và Quản lý tài chính.
 
 ---
 
 ## Kỹ năng kỹ thuật
 
-**Yêu cầu & Đặc tả:** Requirement Analysis, Functional & Technical Specifications, User Stories, Use Cases, Process Flows, Data Modeling
-
-**Ngôn ngữ & Framework:** PHP, Laravel, Lumen, Java, Spring Boot, JavaScript, TypeScript, Vue.js, React, Next.js, Nuxt.js
-
-**Cơ sở dữ liệu:** PostgreSQL, MySQL, MongoDB
-
-**Kiến trúc & Thiết kế:** Domain-Driven Design, Hexagonal Architecture, Clean Architecture, Modular Monolith, Event-Driven Architecture, EAV Model
-
-**Nguyên tắc kỹ thuật:** OOP, SOLID, Design Patterns, RESTful API, Authentication & Authorization
-
-**Bảo mật & Xác thực:** OAuth2, JWT, Spring Security, Method-level Authorization
-
-**Công cụ & Nền tảng:** Git, GitHub, GitLab, Docker, Linux, Jira, Maven, Neovim, PhpStorm, VS Code
+- **Ngôn ngữ & Framework:** PHP *(Laravel, Lumen)* **[Advanced]** • PostgreSQL 16 *(SQL Tuning, Indexing, N+1 Fixes)* **[Advanced]** • Java 21 *(Spring Boot, Spring Security)* **[Working]** • TypeScript / JavaScript *(Bun 1.3+, Hono 4, Next.js, React)* **[Working]** • Python *(Apache Airflow)* **[Working]**
+- **Cơ sở dữ liệu & Data Engineering:** PostgreSQL 16 **[Advanced]** • MySQL **[Working]** • MongoDB **[Working]** • Tối ưu hóa SQL & Indexing **[Advanced]** • Airflow DAGs & Data Pipelines **[Working]**
+- **Kiến trúc & Thiết kế:** Domain-Driven Design (DDD) & Modular Monolith **[Advanced]** • Clean & Hexagonal Architecture **[Advanced]** • Backend-for-Frontend (BFF) & OpenAPI 3 **[Advanced]** • Event-Driven Architecture (NATS) **[Working]**
+- **Bảo mật & DevOps:** OAuth2 & JWT Authentication **[Advanced]** • Docker, Docker Compose & Nginx **[Advanced]** • Triển khai Blue-Green (Zero-downtime) **[Advanced]** • Git Branching Strategy **[Advanced]**
 
 ---
 
 ## Kinh nghiệm làm việc
 
-### Kỹ sư Kỹ thuật (Technical Engineer)
-**Onschool Edtech Group**<br>
-11/2022 – Hiện tại | Thành phố Hồ Chí Minh, Việt Nam
+### Onschool Edtech Group
+Thành phố Hồ Chí Minh, Việt Nam | 11/2022 – Hiện tại
 
-**Hệ thống trọng tâm:** SLC (Student Life Cycle) | SRM System (Student Management) | Moodle Integration
+#### Tech Lead
+06/2024 – Hiện tại
 
-**Đóng góp chính:**
+- Quản lý 3 dự án với đội ngũ 6 thành viên (1 BA, 1 Tester, 4 Developers), dẫn dắt thực thi kỹ thuật và đảm bảo cột mốc tiến độ.
+- Nhận yêu cầu, phân tích hệ thống, thiết kế kiến trúc, phát triển phần mềm và xây dựng hạ tầng.
 
-- Thu thập, phân tích và tài liệu hóa các yêu cầu kỹ thuật và nghiệp vụ từ stakeholders trong lĩnh vực công nghệ giáo dục.
-- Chuyển đổi nhu cầu kinh doanh thành các đặc tả chức năng (functional specifications) và đặc tả kỹ thuật (technical specifications) rõ ràng, chi tiết.
-- Xây dựng user stories, use cases, luồng quy trình (process flows) và mô hình dữ liệu (data models).
-- Đảm bảo các yêu cầu hoàn chỉnh, có tính khả thi kỹ thuật và gắn kết chặt chẽ với mục tiêu kinh doanh.
-- Dẫn dắt thiết kế kỹ thuật và kiến trúc backend cho hệ thống student lifecycle và student management theo Domain-Driven Design (DDD), Hexagonal Architecture và Clean Architecture.
-- Triển khai mô hình Backend-for-Frontend (BFF) với OAuth2 cho tích hợp bên thứ ba và JWT cho dịch vụ nội bộ.
-- Xây dựng cơ chế phân quyền chi tiết bằng Spring Security và custom `PermissionEvaluator` cho method-level access control.
-- Thiết kế và vận hành quy trình blue-green deployment cho production nhằm đảm bảo zero-downtime và khả năng rollback an toàn.
-- Cải thiện hiệu năng backend và khả năng quan sát hệ thống bằng tối ưu truy cập dữ liệu, hạn chế N+1 query và bổ sung structured logging/tracing.
-- Reverse-engineer cơ chế autoload Frankenstyle của Moodle và phát triển local plugin với external functions cùng web service APIs.
-- Phối hợp với stakeholder trong quá trình làm rõ yêu cầu, đào tạo người dùng và hỗ trợ điều phối đội ngũ trong giai đoạn triển khai.
+##### 1. APM (Academic Process Management / Student Life Cycle)
+- **Mô tả dự án:** Quản lý toàn diện chương trình đào tạo, lộ trình học tập, miễn giảm học phần, sổ điểm, xếp lớp và lịch thi cho các chương trình đại học.
+- **Công nghệ:** Java 21, Spring Boot (Spring Security, Spring Data JPA), Next.js, PostgreSQL 16, Docker Compose, Nginx
+- **Trách nhiệm:**
+  - Nhận yêu cầu, phân tích hệ thống, thiết kế kiến trúc backend và xây dựng hạ tầng production.
+  - Thiết kế kiến trúc theo Domain-Driven Design (DDD), Hexagonal Architecture và Backend-for-Frontend (BFF).
+  - Xây dựng hạ tầng bảo mật sử dụng OAuth2 cho dịch vụ bên thứ 3, JWT cho dịch vụ nội bộ và custom `PermissionEvaluator` cho phân quyền mức method.
+  - Vận hành quy trình triển khai Blue-Green trên Production đạt zero-downtime và khả năng rollback tức thì.
+
+##### 2. Data Pipeline System
+- **Mô tả dự án:** Hệ thống tự động hóa truyền tải, chuyển đổi và đồng bộ dữ liệu giữa các cơ sở dữ liệu học thuật cốt lõi.
+- **Công nghệ:** Python, Apache Airflow, PostgreSQL 16, Docker Compose, Nginx
+- **Trách nhiệm:**
+  - Phân tích yêu cầu và thiết kế kiến trúc kỹ thuật.
+  - Lập trình các DAGs bằng Python & Apache Airflow để tự động hóa luồng đồng bộ dữ liệu giữa các CSDL PostgreSQL 16.
+  - Xây dựng cơ chế kiểm thử toàn vẹn dữ liệu hàng ngày và cảnh báo tự động cho hệ thống pipeline.
+
+##### 3. Data Controlling System
+- **Mô tả dự án:** Hệ thống giám sát vận hành tổng hợp dữ liệu đa hệ thống để kích hoạt cảnh báo tự động và phát hành ticket vận hành cho các trường hợp quá hạn.
+- **Công nghệ:** Bun 1.3+, Hono 4 (REST + OpenAPI 3), PostgreSQL 16, Docker Compose, Nginx
+- **Trách nhiệm:**
+  - Phân tích yêu cầu, thiết kế kỹ thuật, phát triển phần mềm và xây dựng hạ tầng.
+  - Phát triển các REST APIs hiệu năng cao tuân thủ chuẩn OpenAPI 3 / Swagger bằng Hono 4 chạy trên Bun 1.3+.
+  - Container hóa microservices và cấu hình Nginx reverse proxy với Docker Compose.
+
+#### Software Engineer
+11/2022 – 06/2024
+
+- Phát triển các mô-đun cốt lõi của hệ sinh thái SRM và tích hợp hệ thống Moodle LMS.
+
+##### 1. SRM Ecosystem (SRMA, SRM1, SV50)
+- **Mô tả dự án:** Hệ sinh thái quản lý thông tin và hồ sơ sinh viên toàn diện từ khi là contact (đăng ký/tư vấn) cho tới khi hoàn thành học tập, sổ điểm, công nợ/thu chi và đối soát tự động sao kê ngân hàng trên nhiều instance trường.
+- **Công nghệ:** PHP (Laravel, Lumen), PostgreSQL 16, MySQL, React, Nuxt.js, Git
+- **Trách nhiệm:**
+  - Phân tích yêu cầu, thiết kế kỹ thuật, phát triển phần mềm cốt lõi và hỗ trợ vai trò Tech Lead ở giai đoạn sau.
+  - Phát triển các mô-đun tài chính & học thuật SRMA: sổ điểm, luồng hồ sơ, thu chi và đối soát tự động sao kê ngân hàng.
+  - Thiết kế **giải pháp download bất đồng bộ (Async Batch Download)** xuất báo cáo tài chính dung lượng lớn không gây nghẽn HTTP thread hay tràn RAM.
+  - Refactor hệ thống SRM1 & SV50: tối ưu hóa N+1 query và triển khai phân trang SQL hiệu năng cao trên các CSDL PostgreSQL 16 độc lập.
+  - Xây dựng chiến lược DB migration đa instance và chuẩn hóa cấu trúc nhánh Git repository.
+  - Thiết kế công cụ và quy trình trao đổi dữ liệu chuẩn hóa giữa các phòng ban vận hành và 3 hệ thống cốt lõi (SRMA, SV50, SRM1).
+
+##### 2. LMS2.0 (Moodle LMS Integration & Custom UI)
+- **Mô tả dự án:** Nền tảng tích hợp LMS sử dụng Moodle LMS làm hệ thống trung tâm, phát triển giao diện tùy chỉnh và tích hợp các REST Web Service APIs theo yêu cầu riêng của Onschool.
+- **Công nghệ:** PHP, Moodle Core (Frankenstyle structure), REST Web Service APIs
+- **Trách nhiệm:**
+  - Phân tích yêu cầu, thiết kế kỹ thuật, phát triển plugin tùy chỉnh và tối ưu hiệu năng API.
+  - Nghiên cứu core Moodle; phát triển các local plugin tùy chỉnh và REST Web Service APIs cho tiến trình học tập, điểm số, khóa học và lớp học trực tuyến.
+  - Tối ưu hóa thuật toán xử lý API: thay thế các vòng lặp $O(N^2)$ bằng giải pháp HashMap / Lookup Table ($O(1)$), giảm đáng kể độ trễ phản hồi API.
 
 ---
 
-### Kỹ sư Kỹ thuật (Technical Engineer)
-**Freelance**<br>
+### Freelance
 2022 – Hiện tại | Remote
 
-**Financial Management Platform** — Laravel, React, MongoDB
+#### Digital Bank
+- **Mô tả dự án:** Nền tảng Digital Bank quản lý ví tiền của từng phòng ban, thực hiện giao dịch nội bộ và mua bán/quản lý hợp đồng nhà đất & bất động sản.
+- **Công nghệ:** PHP (Laravel), React, MongoDB, NATS, Docker Compose, Nginx
+- **Trách nhiệm:**
+  - Phân tích yêu cầu nghiệp vụ, thiết kế kiến trúc phần mềm, phát triển ứng dụng và xây dựng hạ tầng.
+  - Thiết kế mô hình dữ liệu thực thể tài chính động bằng cấu trúc Entity-Attribute-Value (EAV).
+  - Triển khai Event-Driven Architecture với NATS messaging queue cho xử lý giao dịch bất đồng bộ và thông báo thời gian thực.
+  - Phát triển cơ chế **On-demand Image Resizing / Tối ưu hóa ảnh động** kết hợp lazy loading, giảm 60%+ thời gian tải trang.
+  - Triển khai hạ tầng ứng dụng với Docker Compose và Nginx.
 
-**Đóng góp chính:**
+---
 
-- Phân tích yêu cầu nghiệp vụ của khách hàng và thiết kế các thực thể tài chính linh hoạt bằng mô hình Entity-Attribute-Value (EAV).
-- Xây dựng nền tảng quản lý tài chính trên Laravel theo hướng mô-đun với PHP core tuân thủ PSR để tái sử dụng business logic.
-- Triển khai workflow event-driven với NATS cho xử lý bất đồng bộ và thông báo tài chính theo thời gian thực.
-- Cải thiện trải nghiệm tải frontend bằng lazy loading và tối ưu client-side rendering.
+## Người tham chiếu (References)
+
+- **Phạm Anh Tuấn** — Trưởng Phòng Kỹ thuật — Onschool Edtech Group
+- **Số điện thoại:** +84 902 996 885
 
 ---
 

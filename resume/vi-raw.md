@@ -20,7 +20,7 @@
 
 ## Tóm tắt nghề nghiệp
 
-Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực EdTech và Quản lý tài chính. Thành thạo **Java 21 / Spring Boot**, **PHP / Laravel**, **Python / Apache Airflow**, và **Bun 1.3+ / Hono 4 (OpenAPI 3)**. Am hiểu về kiến trúc phần mềm (**Domain-Driven Design (DDD)**, **Modular Monolith**, **Clean / Hexagonal Architecture**, **Event-Driven Architecture**). Có thế mạnh vượt trội về thiết kế backend, xây dựng Data Pipeline tự động hóa trên **PostgreSQL 16 (OAA DB & APM DB)**, tối ưu hiệu năng (xử lý N+1 query, giải pháp download bất đồng bộ cho báo cáo dung lượng lớn, tối ưu thuật toán API $O(1)$, cơ chế On-demand Image Resizing, chuẩn hóa DB migration đa instance), thiết kế phân quyền/xác thực bảo mật (OAuth2, JWT, Spring Security) và triển khai hạ tầng với **Docker Compose + Nginx**.
+Software Engineer với hơn 4 năm kinh nghiệm thực tế thiết kế, refactor và tối ưu hóa các hệ thống quy mô lớn trong lĩnh vực EdTech và Quản lý tài chính.
 
 ## Kỹ năng kỹ thuật
 
@@ -33,7 +33,7 @@ Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực 
 
 ### Databases & Data Engineering
 
-- PostgreSQL 16 (OAA Database & APM Database)
+- PostgreSQL 16 (CSDL Tuyển sinh & CSDL Tiến trình Học tập)
 - MySQL
 - MongoDB
 - Truy vấn SQL & Indexing, Apache Airflow DAGs, Tối ưu hóa N+1 query, Asynchronous Batch Download, On-demand Image Resizing, Data Migration Strategy
@@ -73,56 +73,50 @@ Software Engineer với hơn 4 năm kinh nghiệm làm việc trong lĩnh vực 
 
 ## Kinh nghiệm làm việc
 
-### Onschool Edtech Group
+### 1. Onschool Edtech Group
+- **Địa điểm:** Thành phố Hồ Chí Minh, Việt Nam
+- **Thời gian tổng:** 11/2022 – Hiện tại
 
-- Thời gian: 11/2022 - nay
-- Vai trò: Software Engineer / Tech Lead (Tech Lead cho APM; Tech Lead cho SRM/SRMA ở giai đoạn sau; Delivery Manager cho Data Pipeline)
-- Địa điểm: Thành phố Hồ Chí Minh, Việt Nam
+#### Tech Lead (06/2024 – Hiện tại)
+- Managed 3 projects leading a 6-member team (1 BA, 1 Tester, 4 Developers), steering technical execution and delivery milestones.
+- Nhận yêu cầu, phân tích, thiết kế, phát triển, xây dựng hạ tầng của ứng dụng.
 
-#### Sản phẩm & Dự án chi tiết
+##### APM (Academic Process Management / Student Life Cycle)
+- **Mô tả dự án:** Comprehensive management of academic plans, learning paths, course exemptions, gradebooks, class enrollments, and examination schedules.
+- **Công nghệ:** Java 21, Spring Boot, Next.js, PostgreSQL 16
+- **Responsibility:** Phân tích, thiết kế, phát triển ứng dụng, xây dựng hạ tầng.
 
-##### 1. APM (Academic Process Management) — Java 21, Spring Boot, Next.js, PostgreSQL 16 (Tech Lead / Software Engineer)
-- **Nghiệp vụ:** Quản lý thông tin kế hoạch, lộ trình, quá trình học tập của sinh viên.
-- **Đóng góp kỹ thuật:**
-  - Thiết kế source code áp dụng Platform architecture, DDD, Core Concept, Backend-for-Frontend (BFF), Hexagonal architecture giúp dễ dàng cải tiến khi tích hợp nhiều hệ thống.
-  - Áp dụng OAuth2 để bảo mật dữ liệu khi cung cấp cho bên thứ 3 và JWT cho kết nối nội bộ; triển khai method-level authorization với Spring Security & custom `PermissionEvaluator`.
-  - Thiết kế và triển khai quy trình Blue-Green deployment trên production giúp đảm bảo zero-downtime và khả năng rollback an toàn.
+##### Data Pipeline System
+- **Mô tả dự án:** Chuyển dữ liệu giữa các hệ thống với nhau.
+- **Công nghệ:** Python, Apache Airflow, PostgreSQL 16, Docker Compose, Nginx
+- **Responsibility:** Phân tích, thiết kế.
 
-##### 2. Data Pipeline & Data Controlling System — Python, Apache Airflow, PostgreSQL 16 (OAA DB & APM DB), Bun 1.3+, Hono 4 (OpenAPI 3), Docker Compose, Nginx (Delivery Manager)
-- **Nghiệp vụ:** Đồng bộ dữ liệu liên hệ thống tự động giữa CSDL OAA và APM, xây dựng REST APIs chuẩn OpenAPI 3 và giám sát cảnh báo vận hành.
-- **Đóng góp kỹ thuật:**
-  - Thiết kế và lập trình các DAGs trên **Python & Apache Airflow** để tự động hóa luồng đồng bộ dữ liệu giữa CSDL PostgreSQL 16 OAA và CSDL APM.
-  - Thiết kế quy trình tự động kiểm toán (daily / auto auditing) giám sát xem datapipeline có chạy hay không.
-  - Xây dựng hệ thống REST Web APIs hiệu năng cao tuân thủ chuẩn **OpenAPI 3 / Swagger** bằng framework **Hono 4** chạy trên runtime thế hệ mới **Bun 1.3+**.
-  - Đóng gói và vận hành hạ tầng dịch vụ container hóa bằng **Docker Compose** và **Nginx** làm reverse proxy.
+##### Data Controlling System
+- **Mô tả dự án:** Aggregated multi-system data to trigger automated alerts and generate operational tickets for overdue cases.
+- **Công nghệ:** Bun 1.3+, Hono 4 (OpenAPI 3), PostgreSQL 16, Docker Compose, Nginx
+- **Responsibility:** Phân tích, thiết kế, phát triển ứng dụng, xây dựng hạ tầng.
 
-##### 3. Hệ sinh thái SRM System (SRMA, SRM1, SV50) — PHP (Laravel, Lumen), PostgreSQL 16, MySQL, React, Nuxt.js (Software Engineer / Tech Lead giai đoạn sau)
-- **Nghiệp vụ:** Quản lý hồ sơ sinh viên, tiến trình học tập, đơn từ, tài chính và quy trình đăng ký nhập học của các trường đại học đối tác trên nhiều instance phân tán.
-- **Đóng góp kỹ thuật:**
-  - Phát triển tính năng liên quan đến Sinh viên, Điểm, xử lý đơn từ, quản lý tài chính thực thu, phải thu, sao kê ngân hàng và tự động đối soát sao kê (auto match bank statements).
-  - Phát triển giải pháp **download bất đồng bộ** (asynchronous batch download) xử lý các bộ dữ liệu/báo cáo lớn mà không gây quá tải tài nguyên hay nén RAM.
-  - Refactor các hệ thống legacy SRM1 & SV50, tối ưu tốc độ xử lý bằng cách loại bỏ triệt để N+1 queries và áp dụng phân trang hiệu năng cao trên CSDL PostgreSQL 16.
-  - Design chiến lược DB migration chuẩn hóa cấu trúc dữ liệu đa instance và tái cấu trúc Git repos theo chiến lược branching tối ưu.
-  - **Thiết kế quy trình & công cụ bàn giao dữ liệu:** Đề xuất và xây dựng quy trình làm việc cùng công cụ chuẩn hóa bàn giao file dữ liệu giữa các phòng ban vận hành và 3 hệ thống thành phần (SRMA, SV50, SRM1), đảm bảo dữ liệu không bị thất thoát hay sai lệch.
+#### Software Engineer (11/2022 – 06/2024)
+- Phát triển các mô-đun cốt lõi của hệ sinh thái SRM và tích hợp hệ thống Moodle LMS.
 
-##### 4. Moodle LMS Integration — PHP, Moodle Core, REST Web Service APIs (Software Engineer)
-- **Nghiệp vụ:** Tích hợp dữ liệu và tiến trình học tập giữa Moodle LMS và hệ thống Onschool.
-- **Đóng góp kỹ thuật:**
-  - Nghiên cứu Moodle core internals; phát triển local plugin cùng các REST APIs cho sự kiện học tập, course module, sinh viên, điểm số, live class.
-  - Sử dụng HashMap / Lookup Table thay cho vòng lặp foreach lồng nhau ($O(N^2) \rightarrow O(1)$) để tăng tốc độ xử lý API rõ rệt.
+##### SRM Ecosystem (SRMA, SRM1, SV50)
+- **Mô tả dự án:** Quản lý thông tin sinh viên từ khi là contact (đăng ký/tư vấn) cho tới khi hoàn thành/kết thúc quá trình học tại trường.
+- **Công nghệ:** PHP (Laravel, Lumen), PostgreSQL 16, MySQL, React, Nuxt.js
+- **Responsibility:** Phân tích, thiết kế, phát triển ứng dụng.
 
-### Freelance
+##### LMS2.0
+- **Mô tả dự án:** Sử dụng Moodle LMS làm hệ thống trung tâm, phát triển giao diện tùy chỉnh và tích hợp Web Service APIs theo yêu cầu riêng của Onschool.
+- **Công nghệ:** PHP, Moodle Core, REST Web Service APIs
+- **Responsibility:** Phân tích, thiết kế, phát triển ứng dụng, tối ưu hiệu năng API.
 
-- Thời gian: 2022 - nay
-- Vai trò: Software Engineer
-- Địa điểm: Remote
+### 2. Freelance
+- **Thời gian:** 2022 – Hiện tại | Remote
+- **Vai trò:** Software Engineer
 
-#### Financial Management Platform — Laravel, React, MongoDB, NATS, Docker Compose, Nginx
-- Phân tích nghiệp vụ tài chính và định nghĩa mô hình dữ liệu linh hoạt bằng Entity-Attribute-Value (EAV).
-- Xây nền tảng quản lý tài chính theo hướng mô-đun với PSR-compliant PHP core để tái sử dụng business logic.
-- Triển khai Event-Driven Architecture với NATS messaging queue cho xử lý giao dịch bất đồng bộ và thông báo thời gian thực.
-- Áp dụng cơ chế **On-demand Image Resizing / Dynamic Image Optimization** kết hợp lazy loading và client-side rendering, giúp tối ưu băng thông và giảm 60%+ thời gian tải trang.
-- Triển khai ứng dụng với Docker Compose và Nginx reverse proxy.
+#### Digital Bank
+- **Mô tả dự án:** Nền tảng Digital Bank quản lý ví tiền của từng phòng ban, thực hiện giao dịch nội bộ và mua bán/quản lý hợp đồng nhà đất & bất động sản.
+- **Công nghệ:** Laravel, React, MongoDB, NATS, Docker Compose, Nginx
+- **Responsibility:** Phân tích, thiết kế, phát triển ứng dụng, xây dựng hạ tầng.
 
 ## Người tham chiếu (References)
 

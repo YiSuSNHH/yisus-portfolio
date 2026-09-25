@@ -46,78 +46,99 @@ export default function HarvardResumePage() {
 
       {/* Main Resume Content - Classic Harvard Monochromatic Serif Layout */}
       <main className="min-h-[100dvh] bg-zinc-100 px-4 pb-12 pt-24 font-serif text-black md:px-6 print:bg-white print:p-0 print:pt-0">
-        <article className="mx-auto max-w-[800px] border border-zinc-200 bg-white p-10 shadow-sm print:max-w-none print:border-0 print:p-0 print:shadow-none">
+        <article className="mx-auto max-w-[800px] border border-zinc-200 bg-white p-8 shadow-sm print:max-w-none print:border-0 print:p-0 print:shadow-none print:space-y-3">
           
           {/* Header */}
           <header className="text-center">
-            <h1 className="text-2xl font-bold uppercase tracking-widest text-black">
+            <h1 className="text-xl font-bold uppercase tracking-widest text-black print:text-lg">
               {personal.name.toUpperCase()}
             </h1>
-            <p className="mt-2 text-xs leading-relaxed text-zinc-800">
+            <p className="mt-1.5 text-xs leading-tight text-zinc-800 print:text-[10.5px]">
               {personal.location} &nbsp;|&nbsp; Phone: {personal.phone} &nbsp;|&nbsp; Email: {personal.email}
             </p>
-            <p className="mt-1 text-xs leading-relaxed text-zinc-800">
+            <p className="mt-0.5 text-xs leading-tight text-zinc-800 print:text-[10.5px]">
               LinkedIn: linkedin.com/in/yisus-nhh &nbsp;|&nbsp; GitHub: github.com/YiSuSNHH
             </p>
           </header>
 
           {/* Professional Summary */}
-          <section className="mt-6">
-            <h2 className="border-b border-black pb-1 text-xs font-bold uppercase tracking-wider text-black">
-              Executive Summary
+          <section className="mt-4 print:mt-2">
+            <h2 className="border-b border-black pb-0.5 text-xs font-bold uppercase tracking-wider text-black">
+              Professional Summary
             </h2>
-            <p className="mt-2.5 text-xs leading-relaxed text-zinc-900 text-justify">
+            <p className="mt-1.5 text-xs leading-relaxed text-zinc-900 text-justify print:text-[11px] print:leading-snug">
               {about.summary}
             </p>
           </section>
 
           {/* Technical Skills */}
-          <section className="mt-6">
-            <h2 className="border-b border-black pb-1 text-xs font-bold uppercase tracking-wider text-black">
+          <section className="mt-4 print:mt-2">
+            <h2 className="border-b border-black pb-0.5 text-xs font-bold uppercase tracking-wider text-black">
               Technical Skills
             </h2>
-            <ul className="mt-2.5 space-y-1.5 text-xs leading-relaxed text-zinc-900">
+            <ul className="mt-1.5 space-y-1.5 text-xs leading-normal text-zinc-900 print:text-[10.5px] print:space-y-1">
               <li>
-                <strong className="font-semibold text-black">Core Languages &amp; Frameworks:</strong> {skills.languages.map((item) => `${item.name} (${item.frameworks.join(", ")})`).join("; ")}
+                <strong className="font-semibold text-black">Languages &amp; Frameworks:</strong>{" "}
+                {skills.languages.map((item, idx) => (
+                  <span key={item.name}>
+                    {idx > 0 && <span className="mx-1 text-zinc-400">•</span>}
+                    <span className="font-semibold text-black">{item.name}</span>{" "}
+                    <span className="text-zinc-700">({item.frameworks.join(", ")})</span>{" "}
+                    <span className="font-mono text-[9.5px] font-bold text-zinc-800">[{item.level === "Working Knowledge" ? "Working" : item.level}]</span>
+                  </span>
+                ))}
               </li>
               <li>
-                <strong className="font-semibold text-black">Databases &amp; Performance:</strong> {skills.databases.join(", ")}; SQL tuning, high-performance pagination, N+1 query elimination, DB migration strategies
+                <strong className="font-semibold text-black">Databases &amp; Infrastructure:</strong>{" "}
+                {skills.databases.map((item, idx) => (
+                  <span key={item.name}>
+                    {idx > 0 && <span className="mx-1 text-zinc-400">•</span>}
+                    <span className="font-semibold text-black">{item.name}</span>{" "}
+                    <span className="font-mono text-[9.5px] font-bold text-zinc-800">[{item.level === "Working Knowledge" ? "Working" : item.level}]</span>
+                  </span>
+                ))}
               </li>
               <li>
-                <strong className="font-semibold text-black">Architecture &amp; System Design:</strong> {skills.architecture.join(", ")}
+                <strong className="font-semibold text-black">Architecture &amp; System Design:</strong>{" "}
+                {skills.architecture.map((item, idx) => (
+                  <span key={item.name}>
+                    {idx > 0 && <span className="mx-1 text-zinc-400">•</span>}
+                    <span>{item.name}</span>{" "}
+                    <span className="font-mono text-[9.5px] font-bold text-zinc-800">[{item.level === "Working Knowledge" ? "Working" : item.level}]</span>
+                  </span>
+                ))}
               </li>
               <li>
-                <strong className="font-semibold text-black">Security &amp; Authorization:</strong> {skills.security.join(", ")}
-              </li>
-              <li>
-                <strong className="font-semibold text-black">DevOps &amp; Tools:</strong> {skills.tools.join(", ")}
+                <strong className="font-semibold text-black">Security &amp; DevOps:</strong>{" "}
+                {skills.security.concat(skills.tools.slice(0, 3)).map((item, idx) => (
+                  <span key={item.name}>
+                    {idx > 0 && <span className="mx-1 text-zinc-400">•</span>}
+                    <span>{item.name}</span>{" "}
+                    <span className="font-mono text-[9.5px] font-bold text-zinc-800">[{item.level === "Working Knowledge" ? "Working" : item.level}]</span>
+                  </span>
+                ))}
               </li>
             </ul>
           </section>
 
           {/* Professional Experience */}
-          <section className="mt-6">
-            <h2 className="border-b border-black pb-1 text-xs font-bold uppercase tracking-wider text-black">
+          <section className="mt-4 print:mt-2">
+            <h2 className="border-b border-black pb-0.5 text-xs font-bold uppercase tracking-wider text-black">
               Professional Experience
             </h2>
 
-            <div className="mt-3.5 space-y-5">
+            <div className="mt-2.5 space-y-3.5 print:space-y-2">
               {experience.map((exp) => (
-                <div key={exp.company}>
-                  <div className="flex flex-col justify-between text-xs sm:flex-row">
-                    <span className="font-bold text-black">{exp.company}</span>
-                    <span className="italic text-zinc-800">{exp.location}</span>
+                <div key={`${exp.company}-${exp.role}`} className="print:break-inside-avoid">
+                  <div className="flex flex-col justify-between text-xs sm:flex-row font-bold text-black print:text-[11px]">
+                    <span>{exp.company} — <span className="font-normal italic">{exp.role}</span></span>
+                    <span className="font-normal italic text-zinc-800">{exp.period} | {exp.location}</span>
                   </div>
-                  <div className="flex flex-col justify-between text-xs sm:flex-row">
-                    <span className="italic text-zinc-900">{exp.role}</span>
-                    <span className="italic text-zinc-800">{exp.period}</span>
-                  </div>
-                  <p className="mt-1 text-[11px] italic text-zinc-700">
-                    {exp.summary}
-                  </p>
-                  <ul className="mt-2 list-disc space-y-1 pl-4 text-xs leading-relaxed text-zinc-900">
-                    {exp.achievements.map((item) => (
-                      <li key={item}>{item}</li>
+                  <ul className="mt-1 space-y-1 text-xs leading-normal text-zinc-900 print:text-[10.5px] print:space-y-0.5">
+                    {exp.projects.map((proj) => (
+                      <li key={proj.name}>
+                        <strong className="font-semibold text-black">{proj.name}:</strong> {proj.description} <span className="italic text-zinc-700">({proj.tech})</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -127,15 +148,14 @@ export default function HarvardResumePage() {
 
           {/* References */}
           {references && references.length > 0 && (
-            <section className="mt-6">
-              <h2 className="border-b border-black pb-1 text-xs font-bold uppercase tracking-wider text-black">
+            <section className="mt-4 print:mt-2 print:break-inside-avoid">
+              <h2 className="border-b border-black pb-0.5 text-xs font-bold uppercase tracking-wider text-black">
                 References
               </h2>
-              <div className="mt-3 space-y-2">
+              <div className="mt-1.5 space-y-1 text-xs text-zinc-900 print:text-[10.5px]">
                 {references.map((ref) => (
-                  <div key={ref.name} className="text-xs leading-relaxed text-zinc-900">
-                    <span className="font-bold text-black">{ref.name}</span> &nbsp;—&nbsp; <span className="italic text-zinc-800">{ref.title} ({ref.company})</span>
-                    <p className="text-zinc-800 font-mono text-[11px]">Phone: {ref.phone}</p>
+                  <div key={ref.name}>
+                    <span className="font-bold text-black">{ref.name}</span> &nbsp;—&nbsp; <span className="italic text-zinc-800">{ref.title} ({ref.company})</span> &nbsp;|&nbsp; <span className="font-mono text-[10.5px]">Phone: {ref.phone}</span>
                   </div>
                 ))}
               </div>
@@ -143,19 +163,17 @@ export default function HarvardResumePage() {
           )}
 
           {/* Education */}
-          <section className="mt-6">
-            <h2 className="border-b border-black pb-1 text-xs font-bold uppercase tracking-wider text-black">
+          <section className="mt-4 print:mt-2 print:break-inside-avoid">
+            <h2 className="border-b border-black pb-0.5 text-xs font-bold uppercase tracking-wider text-black">
               Education
             </h2>
-            <div className="mt-3">
-              <div className="flex flex-col justify-between text-xs sm:flex-row">
+            <div className="mt-1.5 flex flex-col justify-between text-xs sm:flex-row print:text-[10.5px]">
+              <div>
                 <span className="font-bold text-black">{education.school}</span>
-                <span className="italic text-zinc-800">Hanoi, Vietnam</span>
-              </div>
-              <div className="flex flex-col justify-between text-xs sm:flex-row">
+                <span className="mx-1.5">—</span>
                 <span className="italic text-zinc-900">{education.degree} in {education.major}</span>
-                <span className="italic text-zinc-800">{education.period}</span>
               </div>
+              <span className="italic text-zinc-800">{education.period}</span>
             </div>
           </section>
 

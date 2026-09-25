@@ -9,14 +9,14 @@ GitHub: [YiSuSNHH](https://github.com/YiSuSNHH) | LinkedIn: [yisus-nhh](https://
 
 ## Giới thiệu
 
-Software Engineer với hơn 4 năm kinh nghiệm thực chiến trong thiết kế, refactor và tối ưu hóa hệ thống backend quản lý dữ liệu quy mô lớn trong lĩnh vực EdTech và Tài chính. Có thế mạnh về **Java 21 / Spring Boot**, **PHP / Laravel**, **Python / Apache Airflow**, và **Bun 1.3+ / Hono 4 (OpenAPI 3)**. Am hiểu sâu sắc về kiến trúc phần mềm (**Domain-Driven Design**, **Modular Monolith**, **Clean / Hexagonal Architecture**, **Event-Driven Architecture**). Nổi bật với khả năng xây dựng hệ thống tự động hóa Data Pipeline trên **PostgreSQL 16 (OAA DB & APM DB)**, giải quyết các bài toán hiệu năng phức tạp (xử lý N+1 query, download bất đồng bộ, tối ưu thuật toán API $O(1)$, On-demand Image Resizing) và triển khai hạ tầng với **Docker Compose + Nginx**.
+Software Engineer với hơn 4 năm kinh nghiệm thực chiến trong thiết kế, refactor và tối ưu hóa hệ thống backend quản lý dữ liệu quy mô lớn trong lĩnh vực EdTech và Tài chính. Có thế mạnh về **Java 21 / Spring Boot**, **PHP / Laravel**, **Python / Apache Airflow**, và **Bun 1.3+ / Hono 4 (OpenAPI 3)**. Am hiểu sâu sắc về kiến trúc phần mềm (**Domain-Driven Design**, **Modular Monolith**, **Clean / Hexagonal Architecture**, **Event-Driven Architecture**). Nổi bật với khả năng xây dựng hệ thống tự động hóa Data Pipeline trên **PostgreSQL 16**, giải quyết các bài toán hiệu năng phức tạp (xử lý N+1 query, download bất đồng bộ, tối ưu thuật toán API $O(1)$, On-demand Image Resizing) và triển khai hạ tầng với **Docker Compose + Nginx**.
 
 ---
 
 ## Kỹ năng kỹ thuật
 
 - **Ngôn ngữ & Frameworks chính:** Java (Java 21 / Spring Boot), PHP (Laravel, Lumen), TypeScript / JavaScript (**Bun 1.3+**, **Hono 4 - REST + OpenAPI 3**, Next.js, React), Python (**Apache Airflow**)
-- **Cơ sở dữ liệu & Data Engineering:** **PostgreSQL 16 (OAA Database & APM Database)**, MySQL, MongoDB; Apache Airflow DAGs, tối ưu truy vấn SQL & Indexing, khắc phục triệt để N+1 query, On-demand Image Resizing, thiết kế & chuẩn hóa schema DB
+- **Cơ sở dữ liệu & Data Engineering:** **PostgreSQL 16**, MySQL, MongoDB; Apache Airflow DAGs, tối ưu truy vấn SQL & Indexing, khắc phục triệt để N+1 query, On-demand Image Resizing, thiết kế & chuẩn hóa schema DB
 - **Kiến trúc & Thiết kế hệ thống:** Domain-Driven Design (DDD), Modular Monolith, Hexagonal Architecture, Clean Architecture, Backend-for-Frontend (BFF), Event-Driven Architecture (NATS), RESTful API & OpenAPI 3 Specification
 - **Bảo mật & Phân quyền:** OAuth2 (tích hợp 3rd party), JWT (dịch vụ nội bộ), Spring Security (Method-level authorization & Custom `PermissionEvaluator`)
 - **DevOps & Hạ tầng:** **Docker Compose**, **Nginx**, Blue-Green Deployment (Zero-downtime), Git (Multi-instance repo branching), GitHub, GitLab, Linux, Maven, Jira, Structured Logging & Tracing
@@ -29,8 +29,8 @@ Software Engineer với hơn 4 năm kinh nghiệm thực chiến trong thiết k
 **Onschool Edtech Group**<br>
 11/2022 – Hiện tại | Thành phố Hồ Chí Minh, Việt Nam
 
-#### 1. Hệ thống APM (Academic Process Management)
-*Công nghệ: Java 21, Spring Boot, Next.js, PostgreSQL 16 (APM DB)*
+#### 1. Hệ thống Student Life Cycle (SLC System)
+*Công nghệ: Java 21, Spring Boot, Next.js, PostgreSQL 16*
 - **Vai trò:** Software Engineer / Tech Lead
 - **Mục tiêu:** Quản lý thông tin kế hoạch, lộ trình và quá trình học tập toàn diện cho sinh viên.
 - **Đóng góp kỹ thuật:**
@@ -39,11 +39,11 @@ Software Engineer với hơn 4 năm kinh nghiệm thực chiến trong thiết k
   - Thiết kế và vận hành quy trình Blue-Green deployment trên môi trường Production, đảm bảo cập nhật hệ thống với zero-downtime và khả năng rollback an toàn.
 
 #### 2. Hệ thống Data Pipeline & Data Controlling System
-*Công nghệ: Python, Apache Airflow, PostgreSQL 16 (OAA DB & APM DB), Bun 1.3+, Hono 4 (REST + OpenAPI 3), Docker Compose, Nginx*
+*Công nghệ: Python, Apache Airflow, PostgreSQL 16, Bun 1.3+, Hono 4 (REST + OpenAPI 3), Docker Compose, Nginx*
 - **Vai trò:** Delivery Manager
-- **Mục tiêu:** Đồng bộ dữ liệu tự động giữa CSDL OAA (OAA Database) và APM (APM Database), xây dựng các microservices API tốc độ cao và tự động hóa giám sát/cảnh báo vận hành.
+- **Mục tiêu:** Đồng bộ dữ liệu tự động giữa các CSDL đào tạo và tiến trình học tập, xây dựng các microservices API tốc độ cao và tự động hóa giám sát/cảnh báo vận hành.
 - **Đóng góp kỹ thuật:**
-  - Thiết kế và lập trình các DAGs trên **Python & Apache Airflow** để tự động hóa luồng chuyển đổi và đồng bộ dữ liệu giữa PostgreSQL 16 OAA Database và APM Database.
+  - Thiết kế và lập trình các DAGs trên **Python & Apache Airflow** để tự động hóa luồng chuyển đổi và đồng bộ dữ liệu giữa các CSDL PostgreSQL 16.
   - Thiết kế quy trình tự động kiểm toán (daily / auto auditing) giám sát trạng thái pipeline và tự động gửi cảnh báo khi phát hiện quá hạn hoặc sai lệch logic.
   - Xây dựng hệ thống REST Web APIs hiệu năng cao tuân thủ chuẩn **OpenAPI 3 / Swagger** bằng framework **Hono 4** chạy trên runtime thế hệ mới **Bun 1.3+**.
   - Đóng gói và triển khai hạ tầng dịch vụ container hóa bằng **Docker Compose** và **Nginx** làm reverse proxy.
