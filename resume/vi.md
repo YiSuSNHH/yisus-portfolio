@@ -15,10 +15,10 @@ Software Engineer với hơn 4 năm kinh nghiệm thực tế thiết kế, refa
 
 ## Kỹ năng kỹ thuật
 
-- **Ngôn ngữ & Framework:** PHP *(Laravel, Lumen)* **[Advanced]** • PostgreSQL 16 *(SQL Tuning, Indexing, N+1 Fixes)* **[Advanced]** • Java 21 *(Spring Boot, Spring Security)* **[Working]** • TypeScript / JavaScript *(Bun 1.3+, Hono 4, Next.js, React)* **[Working]** • Python *(Apache Airflow)* **[Working]**
-- **Cơ sở dữ liệu & Data Engineering:** PostgreSQL 16 **[Advanced]** • MySQL **[Working]** • MongoDB **[Working]** • Tối ưu hóa SQL & Indexing **[Advanced]** • Airflow DAGs & Data Pipelines **[Working]**
-- **Kiến trúc & Thiết kế:** Domain-Driven Design (DDD) & Modular Monolith **[Advanced]** • Clean & Hexagonal Architecture **[Advanced]** • Backend-for-Frontend (BFF) & OpenAPI 3 **[Advanced]** • Event-Driven Architecture (NATS) **[Working]**
-- **Bảo mật & DevOps:** OAuth2 & JWT Authentication **[Advanced]** • Docker, Docker Compose & Nginx **[Advanced]** • Triển khai Blue-Green (Zero-downtime) **[Advanced]** • Git Branching Strategy **[Advanced]**
+- **Ngôn ngữ & Framework:** PHP *(Laravel, Lumen)* **[Hands-on]** • PostgreSQL 16 *(SQL Tuning, Indexing, N+1 Fixes)* **[Hands-on]** • Java 21 *(Spring Boot, Spring Security)* **[Familiar]** • TypeScript / JavaScript *(Bun 1.3+, Hono 4, Next.js, React)* **[Familiar]** • Python *(Apache Airflow)* **[Familiar]**
+- **Cơ sở dữ liệu & Data Engineering:** PostgreSQL 16 **[Hands-on]** • MySQL **[Familiar]** • MongoDB **[Familiar]** • Tối ưu hóa SQL & Indexing **[Hands-on]** • Airflow DAGs & Data Pipelines **[Familiar]**
+- **Kiến trúc & Thiết kế:** Domain-Driven Design (DDD) & Modular Monolith **[Hands-on]** • Clean & Hexagonal Architecture **[Hands-on]** • Backend-for-Frontend (BFF) & OpenAPI 3 **[Hands-on]** • Event-Driven Architecture (NATS) **[Familiar]**
+- **Bảo mật & DevOps:** OAuth2 & JWT Authentication **[Hands-on]** • Docker, Docker Compose & Nginx **[Hands-on]** • Triển khai Blue-Green (Zero-downtime) **[Hands-on]** • Git Branching Strategy **[Hands-on]**
 
 ---
 

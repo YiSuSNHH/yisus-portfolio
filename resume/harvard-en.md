@@ -12,10 +12,10 @@ Software Engineer with 4+ years of hands-on experience designing, refactoring, a
 
 ## TECHNICAL SKILLS
 
-- **Languages & Frameworks:** PHP *(Laravel, Lumen)* **[Advanced]** • PostgreSQL 16 *(SQL Tuning, Indexing, N+1 Fixes)* **[Advanced]** • Java 21 *(Spring Boot, Spring Security)* **[Working]** • TypeScript / JavaScript *(Bun 1.3+, Hono 4, Next.js, React)* **[Working]** • Python *(Apache Airflow)* **[Working]**
-- **Databases & Infrastructure:** PostgreSQL 16 **[Advanced]** • MySQL **[Working]** • MongoDB **[Working]** • SQL Query Tuning & Indexing **[Advanced]** • Airflow DAGs & Data Pipelines **[Working]**
-- **Architecture & System Design:** Domain-Driven Design (DDD) & Modular Monolith **[Advanced]** • Clean & Hexagonal Architecture **[Advanced]** • Backend-for-Frontend (BFF) & OpenAPI 3 **[Advanced]** • Event-Driven Architecture (NATS) **[Working]**
-- **Security & DevOps:** OAuth2 & JWT Authentication **[Advanced]** • Docker, Docker Compose & Nginx **[Advanced]** • Blue-Green Deployment (Zero-downtime) **[Advanced]** • Git Multi-instance Branching **[Advanced]**
+- **Languages & Frameworks:** PHP *(Laravel, Lumen)* **[Hands-on]** • PostgreSQL 16 *(SQL Tuning, Indexing, N+1 Fixes)* **[Hands-on]** • Java 21 *(Spring Boot, Spring Security)* **[Familiar]** • TypeScript / JavaScript *(Bun 1.3+, Hono 4, Next.js, React)* **[Familiar]** • Python *(Apache Airflow)* **[Familiar]**
+- **Databases & Infrastructure:** PostgreSQL 16 **[Hands-on]** • MySQL **[Familiar]** • MongoDB **[Familiar]** • SQL Query Tuning & Indexing **[Hands-on]** • Airflow DAGs & Data Pipelines **[Familiar]**
+- **Architecture & System Design:** Domain-Driven Design (DDD) & Modular Monolith **[Hands-on]** • Clean & Hexagonal Architecture **[Hands-on]** • Backend-for-Frontend (BFF) & OpenAPI 3 **[Hands-on]** • Event-Driven Architecture (NATS) **[Familiar]**
+- **Security & DevOps:** OAuth2 & JWT Authentication **[Hands-on]** • Docker, Docker Compose & Nginx **[Hands-on]** • Blue-Green Deployment (Zero-downtime) **[Hands-on]** • Git Multi-instance Branching **[Hands-on]**
 
 ---
 
